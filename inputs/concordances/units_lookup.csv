@@ -1,0 +1,4 @@
+unit,val_div,vol_div,val_y_axis,vol_y_axis
+"LTR",1000,1000,"'000 LTR","NZ$ per LTR"
+"KGM",1000,1000,"'000 kg","NZ$ per KG"
+

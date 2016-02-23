@@ -1,0 +1,19 @@
+.Rproj.user
+.Rhistory
+.Rapp.history
+.RData
+*.png
+*.pdf
+[Tt]humbs.db
+*[Tt]humbs.db
+
+# Following used for development. Use Tred source for production
+inputs/*.rda
+
+# dont want the following travelling across the network
+deleted_stuff_to_be_removed/
+outputs/
+legacy_reports/
+
+
+
