@@ -2,8 +2,8 @@
 .Rhistory
 .Rapp.history
 .RData
-*.png
-*.pdf
+
+
 [Tt]humbs.db
 *[Tt]humbs.db
 
