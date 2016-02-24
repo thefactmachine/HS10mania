@@ -1,4 +1,14 @@
+### clear working space
 rm(list = ls())
+
+
+## PPL using MAC, outside of MBIE envirnment does not need to run it.
+if( Sys.info()['sysname'] == 'Windows' ){
+  ## set up R environment ---------------------------------------------------
+  source("P:/R/common.Rprofile")
+}
+
+## load pacakges
 library(Cairo) 
 library(ggplot2)
 library(grid)
