@@ -11,7 +11,9 @@ library(tools)
 library(dplyr)
 
 options(stringsAsFactors = FALSE) 
+load("inputs/Exports_By_Country_20150930.rda")
 
+names(Exports_By_Country)
 
 # set work directory - need to delete one of the following
 PROJHOME <- getwd()
