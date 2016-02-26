@@ -40,6 +40,12 @@ fn_read_data_and_convert_units <- function() {
     df_conv_table <- inner_join(df_al_conv, df_pc, by = c("name" = "name"))
     
     
+    df_exports <- df_exports %>% rename(Total_Exports_NZD_fob = Total_Export_NZD_fob)
+    
+    df_exports$Harmonised_System_Code <- as.character(df_exports$Harmonised_System_Code)
+    
+    
+    
     # partition df_exports into two tables: alcohol and non-alcohol
     # two extra columns have been added to df_alcohol: "name" and "con_rate"
     df_alcohol <- df_exports %>% inner_join(df_conv_table, 
