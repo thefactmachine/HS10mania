@@ -1,0 +1,60 @@
+\documentclass[10pt]{article}
+\usepackage{float}
+\RequirePackage{eso-pic}
+\usepackage{caption}
+\captionsetup[table]{labelformat=empty}
+
+
+
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=11mm,
+right=14mm,
+top=37mm,
+bottom=14mm,
+}
+
+
+
+\usepackage{colortbl}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Calibri}
+
+
+
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics{MBIE_generic_background.pdf}%
+\vfill
+}}}
+
+
+
+\begin{document}
+\thispagestyle{empty}
+\AddToShipoutPicture{\BackgroundPic}
+\section*{Key Export Statistics\footnotemark - Prepared Fish\footnotemark }
+\today\\
+\input{../latex_table/export_prepared_fish_tab1.tex}
+\vspace{-0.7cm}
+
+
+
+   \begin{figure}[H]
+   \centering
+    \includegraphics[scale=0.5]{../graphs/monthly_value/prepared_fish_monthly_value.png} \
+    \includegraphics[scale=0.5]{../graphs/monthly_volume/prepared_fish_monthly_volume.png} \
+    \includegraphics[scale=0.5]{../graphs/smoothed_price/prepared_fish_smoothed_price.png} \
+    \includegraphics[scale=0.5]{../graphs/monthly_number_countries/prepared_fish_monthly_count.png} \
+    \includegraphics[scale=0.5]{../graphs/yearly_summary/prepared_fish_yearly_summary.png} \
+   \end{figure}
+
+
+
+\footnotetext[1]{Source: Statistics New Zealand - Overseas Merchandise Trade}
+\footnotetext[2]{Harmonised System Codes for Prepared Fish starting with: 160419, 160420.}
+\end{document}

@@ -58,7 +58,8 @@ fn_wrapper_create_table <- function(a_df_exports,
   # combine quanity, value and price (df_now_qvp) with their associated percentages (df_pc_qvp)
   # df_now_qvp = 8 x 3; df_pc_qvpe = 8 x 4. Resul of bind_cols = 8 x 7
   df_now_comp <- bind_cols(df_now_qvp, df_pc_qvpe)
-
+  
+  
   # Step 3 - format the raw values
   # assemble a vector of functions. These are used to format the raw numbers. The order of the
   # functions below correspond to the order of the columns in df_now_comp.
@@ -69,11 +70,18 @@ fn_wrapper_create_table <- function(a_df_exports,
   # seq_along(df_now_comp) results in a vector of: 1...n(cols)
   # therefore x in function(x) is passed 1..n(cols) and this means that vct_fn[[x]] returns
   # a function corresponding to column n
+  
+  # FOLLOWING FOR DEBUGGING
+  # print(df_now_comp)
+  
+  # assign("test_df", df_now_comp, envir=globalenv())
+  
   df_now_comp_fmt <-  do.call(cbind, 
                              lapply(seq_along(df_now_comp), 
                                     function(x) vct_fn[[x]](df_now_comp[,x])
                              ) #lapply
                       ) # do.call
+  
   fn_message_log(a_str_product_name, "table data - created (not saved to disk)")
   
 

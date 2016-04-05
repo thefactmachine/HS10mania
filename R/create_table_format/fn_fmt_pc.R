@@ -7,11 +7,13 @@ fn_fmt_pc <- function(x) {
   # therefore the following trickery is used to preserve our data.frame. 
   #mmm RR is tricky!!!
   
-  df_a <- format(x * 100, nsmall = 1, digits = 1, trim = TRUE)
+  df_a <- round(x * 100, 1)
+  # numeric gets coerced to a factor in the following
   vct_b <- paste0(df_a[,1], "\\%")
   df_a[,1] <- vct_b
   return(df_a)
 }
+
 
 
 

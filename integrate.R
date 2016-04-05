@@ -53,7 +53,8 @@ library(tools)
 library(dplyr)
 
 options(stringsAsFactors = FALSE) 
-
+# disable scientific notation
+options(scipen = 999)
 
 # set work directory -
 PROJHOME <- getwd()
@@ -107,8 +108,8 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
               year(dte_end_date), year(dte_end_date) - 1)
 
 # This is testing stuff
-lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
-
+#lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
+# lst_prod_codes <- lst_prod_codes[c("peas")]
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()
@@ -129,8 +130,11 @@ invisible(
       ) # end of: lapply
   ) # end of: invisible
 
+
 # create the cover page
 invisible(fn_create_pdf_cover_page(str_month_end))
 str_file_suffix <- paste0(format(dte_end_date, "%Y"),"-", format(dte_end_date, "%m"))
 # the following joins up the cover page with individual product pdfs into a single conscolidated document.
 fn_create_pdf_compilation(glob.env$vct_pdf_names, str_file_suffix)
+
+
