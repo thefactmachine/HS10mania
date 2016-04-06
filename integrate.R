@@ -109,7 +109,7 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 
 # This is testing stuff
 #lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
-# lst_prod_codes <- lst_prod_codes[c("peas")]
+#st_prod_codes <- lst_prod_codes[c("peas")]
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()
@@ -117,6 +117,12 @@ fn_remove_files_from_output_dir()
 # create vector with global scope to store PDF file names
 glob.env <- new.env() 
 glob.env$vct_pdf_names <- vector(mode = "character")
+
+# this sets up some dates for disply in fn_create_tex_file()
+glob.env$vct_disp_dates <- c(today = format(Sys.Date(), "%B %d, %Y"), 
+                             min = format(min(df_me_exports$Date), "%B %Y" ),
+                             max = format(max(df_me_exports$Date), "%B %Y" ))
+
 
 # invisible() suppresses output from lapply
 invisible(
@@ -136,5 +142,3 @@ invisible(fn_create_pdf_cover_page(str_month_end))
 str_file_suffix <- paste0(format(dte_end_date, "%Y"),"-", format(dte_end_date, "%m"))
 # the following joins up the cover page with individual product pdfs into a single conscolidated document.
 fn_create_pdf_compilation(glob.env$vct_pdf_names, str_file_suffix)
-
-

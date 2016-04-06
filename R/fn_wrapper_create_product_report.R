@@ -85,6 +85,7 @@ fn_wrapper_create_product_report <- function(a_str_product) {
   
   # [5] Create the pdf report
   # call with name of current product and HS10 codes
+  
   fn_wrapper_compile_pdf(a_str_product, vct_HS10_codes)
   
   fn_message_log(a_str_product, "pdf file - created!! - go and collect your new pdf report (outputs/pdf)")

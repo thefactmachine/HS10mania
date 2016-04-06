@@ -18,7 +18,7 @@ fn_create_tex_file <- function(str_current_product, a_vct_HS10_codes) {
   source('R/create_pdf/fn_get_unique_HS10_stubs.R')
   str_disp_HS10 <- fn_get_unique_HS10_stubs(a_vct_HS10_codes)
 
-  
+ 
   
   # define spaces
   c_3_space <- "   "
@@ -82,13 +82,22 @@ fn_create_tex_file <- function(str_current_product, a_vct_HS10_codes) {
                      str_product_title, "\\footnotemark }")
   
   # insert today's date
-  line_e40 <- "\\today\\\\"
+  # line_e40 <- "\\today\\\\"
+  line_e40 <- paste0("Published on ", glob.env$vct_disp_dates['today'],".", " \\par")
+  
+  str_date_start_fin <- paste0("Monthly data from ", 
+                               glob.env$vct_disp_dates['min'], 
+                               " to ", 
+                               glob.env$vct_disp_dates['max'])
+  
+  line_e41 <- paste0("\\small{\\noindent{\\textit{", str_date_start_fin, ".", "}}}")
+  
   
   # following inserts the tex table which is created dynamically
   line_e50 <- paste0("\\input{../latex_table/export_", str_current_product, "_tab1.tex}")
   line_e60 <- "\\vspace{-0.7cm}"
   
-  vct_e <- c(line_e10, line_e15, line_e20, line_e30, line_e40, line_e50, line_e60,  c_blank_lines)
+  vct_e <- c(line_e10, line_e15, line_e20, line_e30, line_e40, line_e41, line_e50, line_e60,  c_blank_lines)
   
   
   # start inserting the graphs.  These are created dynamically
