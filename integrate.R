@@ -108,8 +108,8 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
               year(dte_end_date), year(dte_end_date) - 1)
 
 # This is testing stuff
-#lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
-#st_prod_codes <- lst_prod_codes[c("peas")]
+# lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
+# lst_prod_codes <- lst_prod_codes[c("peas")]
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()
