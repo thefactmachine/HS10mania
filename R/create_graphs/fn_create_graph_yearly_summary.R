@@ -12,9 +12,11 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
   # this is the title of the graph
   str_title <- paste0(str_prod_title_display, " - ", "Total Yearly Quantity, Value and Price (year ending ", 
                       a_int_rpt_year, ")")
+
  
   # print(head(df_data))
   # changes the names of the factor levels.  This produces graphs with nicer labels.
+
   levels(df_data$domain) <- c("Total volume", "Total value", "Total price")
   
   cairo_pdf(str_path, width = 11, height = 2.8)
