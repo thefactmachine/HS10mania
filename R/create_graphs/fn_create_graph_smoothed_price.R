@@ -1,6 +1,6 @@
 fn_create_graph_smoothed_price <- function(df_data, str_dir, str_product, a_int_rpt_year, str_price_unit) {
   # create a full path to save the png
-  str_path <- paste0(str_dir, "/", str_product,  "_smoothed_price.png") 
+  str_path <- paste0(str_dir, "/", str_product,  "_smoothed_price.pdf") 
   
   # create pretty product title for display
   source('R/utilities/fn_create_display_title.R')
@@ -14,8 +14,8 @@ fn_create_graph_smoothed_price <- function(df_data, str_dir, str_product, a_int_
   
   # create the label for the Y axis. This depends on the units of measurement (i.e. str_price_unit)
   y_axis_label <- paste0("Unit Price (", str_price_unit, ")\n")
-  
-  CairoPNG(str_path, width = 850, height = 230)
+
+  cairo_pdf(str_path, width = 11, height = 2.8)
   print(
     ggplot(df_data, aes(x = date, y = tot_price, color = country)) +
       theme_minimal() +

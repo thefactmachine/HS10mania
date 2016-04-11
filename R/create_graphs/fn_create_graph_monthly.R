@@ -51,13 +51,13 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
   # create a full path to save the png creates a string with a format similar to:
   # output/graphs/monthly_value/salmon_monthly_volume.png 
   str_path <- paste0(str_dir_pfx, "/", str_dir_sfx, '/', 
-                     tolower(str_product),  "_monthly_", str_graph_type, ".png") 
+                     tolower(str_product),  "_monthly_", str_graph_type, ".pdf") 
   
   # create the graph title
   str_title <- paste0(str_prod_title_display," - ", str_title_stub, " (year ending ", str_title_yr_end, ")")
   
   # call to CairoPNG() creates a graphic device and stores the result at str_path
-  CairoPNG(str_path, 840, 190)
+  cairo_pdf(str_path, width = 11, height = 2.8)
   print(
     ggplot(df_data, aes(x = date, y = measure)) +
       theme_minimal() +
