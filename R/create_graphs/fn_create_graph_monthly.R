@@ -62,9 +62,9 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
     ggplot(df_data, aes(x = date, y = measure)) +
       theme_minimal() +
       geom_line() + 
-      theme_light(11) +
+      theme_light(11, base_family = "Calibri") +
       scale_colour_manual("Domain", values = mbie.cols(1:7)) + 
-      scale_y_continuous(str_y_axis) +
+      scale_y_continuous(str_y_axis, label = comma) +
       theme(legend.text = element_text(lineheight = 1), legend.key.height = grid::unit(1, "cm")) +
       stat_smooth(method = "loess") +
       theme(axis.title.x = element_blank()) +

@@ -24,10 +24,12 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
     ggplot(df_data, aes(x = year, y = value, fill = domain)) +
       geom_bar(stat = "identity", position = "dodge") +
       facet_wrap(~domain, scales = "free_y") +
-      theme_light(11) +
+      theme_light(11, base_family = "Calibri") +
       theme(legend.text = element_text(lineheight = 0.6), legend.key.height = grid::unit(0.8, "cm"), 
             legend.position = "right") +
       theme(legend.position = "none") + 
+      scale_y_continuous(label = comma) +
+      scale_fill_manual(values = mbie.cols(1:3)) +
       labs(x = "Year") +
       labs(y = "Value") +
       ggtitle(str_title)

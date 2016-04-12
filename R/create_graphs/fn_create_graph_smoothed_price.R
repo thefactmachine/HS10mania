@@ -21,7 +21,7 @@ fn_create_graph_smoothed_price <- function(df_data, str_dir, str_product, a_int_
       theme_minimal() +
       geom_blank() + 
       stat_smooth(method = "loess", se = FALSE, na.rm = TRUE) +
-      theme_light(11) + 
+      theme_light(11, base_family = "Calibri") + 
       scale_colour_manual("Country", values = mbie::mbie.cols(1:7)) + 
       scale_y_continuous(y_axis_label, label = dollar) +
       stat_smooth(data = subset(df_data, country == "Total"), method = "loess", colour = "blue", size = 1.2) +

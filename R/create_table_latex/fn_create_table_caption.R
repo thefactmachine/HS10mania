@@ -15,8 +15,7 @@ fn_create_table_caption <- function(vct_a, a_dte_period_end) {
                           format(a_dte_period_end, "%Y")) 
   
   str_caption <- paste0("Top ", vct_a["top_n"], " ", str_product_title, " Markets for year ending ", 
-              str_month_end, ": Quantity(", str_quant_units,  ") Value(NZ\\$Mill), Price and their last ", 
-              vct_a["cagr_n"], "-Year Growth Rates")
+              str_month_end, ": Quantity (", str_quant_units,  "), Value (NZ\\$Mill) and Price.")
   
   str_caption_with_tags <- paste0("\\caption{\\scriptsize ", str_caption, "}")
   return(str_caption_with_tags)

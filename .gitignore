@@ -12,8 +12,10 @@ inputs/*.rda
 outputs/latex_knitr
 outputs/latex_tex
 outputs/pdf
-
+outputs
 outputs/consolidated_pdf/._eir_2015-11.pdf
+
+git rm --cached -r outputs/latex_tex/.*
 
 
 

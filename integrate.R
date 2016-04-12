@@ -136,7 +136,6 @@ invisible(
       ) # end of: lapply
   ) # end of: invisible
 
-
 # create the cover page
 invisible(fn_create_pdf_cover_page(str_month_end))
 str_file_suffix <- paste0(format(dte_end_date, "%Y"),"-", format(dte_end_date, "%m"))

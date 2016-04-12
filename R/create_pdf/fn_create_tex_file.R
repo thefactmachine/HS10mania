@@ -105,22 +105,22 @@ fn_create_tex_file <- function(str_current_product, a_vct_HS10_codes) {
   line_f20 <- paste0(c_3_space,"\\centering")
   
   # graph 1 MONTHLY VALUE
-  line_f30 <- paste0(c_4_space, "\\includegraphics[scale=0.53]{../graphs/monthly_value/", 
+  line_f30 <- paste0(c_4_space, "\\includegraphics[scale=0.5]{../graphs/monthly_value/", 
                     str_current_product, "_monthly_value.pdf} \\")
   
   # graph 2 MONTHLY VOLUME
-  line_f40 <- paste0(c_4_space, "\\includegraphics[scale=0.53]{../graphs/monthly_volume/", 
+  line_f40 <- paste0(c_4_space, "\\includegraphics[scale=0.5]{../graphs/monthly_volume/", 
                     str_current_product,"_monthly_volume.pdf} \\")
   
   # graph 3 SMOOTHED PRICE
-  line_f50 <- paste0(c_4_space, "\\includegraphics[scale=0.53]{../graphs/smoothed_price/", 
+  line_f50 <- paste0(c_4_space, "\\includegraphics[scale=0.5]{../graphs/smoothed_price/", 
                     str_current_product , "_smoothed_price.pdf} \\")
   
   # graph 4  NUMBER OF COUNTRIES
-  line_f60 <- paste0(c_4_space, "\\includegraphics[scale=0.53]{../graphs/monthly_number_countries/", 
+  line_f60 <- paste0(c_4_space, "\\includegraphics[scale=0.5]{../graphs/monthly_number_countries/", 
                     str_current_product, "_monthly_count.pdf} \\")
   # graph 5 YEARLY SUMMARY
-  line_f70 <- paste0(c_4_space, "\\includegraphics[scale=0.53]{../graphs/yearly_summary/", 
+  line_f70 <- paste0(c_4_space, "\\includegraphics[scale=0.5]{../graphs/yearly_summary/", 
                     str_current_product, "_yearly_summary.pdf} \\")    
   
   
@@ -129,7 +129,7 @@ fn_create_tex_file <- function(str_current_product, a_vct_HS10_codes) {
   
   
   
-  line_g10 <- "\\footnotetext[1]{Source: Statistics New Zealand - Overseas Merchandise Trade}"
+  line_g10 <- "\\footnotetext[1]{Source: Statistics New Zealand - Overseas Merchandise Trade.}"
   
   
   line_g20_a <- paste0("\\footnotetext[2]{Harmonised System Codes for ", str_product_title, 
