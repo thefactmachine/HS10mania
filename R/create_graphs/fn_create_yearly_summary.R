@@ -19,6 +19,5 @@ fn_create_yearly_summary <- function(df_data, a_int_report_year) {
       tot_price = round(tot_price, 1)
     ) %>%
     gather("domain", "value", 2:4)
-  
   return(df_return)
 }

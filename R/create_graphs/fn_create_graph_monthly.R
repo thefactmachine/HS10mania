@@ -29,6 +29,7 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
            str_y_axis = "Total Value (NZ$000) \n"
            df_data <- df_data %>% mutate(measure = tot_value)
            str_dir_sfx <- "monthly_value"
+           str_sm_line_col <- mbie.cols(1)
          },
          
          volume =  {
@@ -36,12 +37,14 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
            str_y_axis = paste0("Total Volume (", str_units, ")\n")
            df_data <- df_data %>% mutate(measure = tot_volume)
            str_dir_sfx <- "monthly_volume"
+           str_sm_line_col <- mbie.cols(2)
          },
          count =   {
            str_title_stub = "Monthly Count of Country/Territory" 
            str_y_axis = "Number of Countries \n"
            df_data <- df_data %>% mutate(measure = num_countries)
            str_dir_sfx <- "monthly_number_countries"
+           str_sm_line_col <- mbie.cols(3)
          }
   )
   # in the switch statement above, we have assigned the column "measure" the relevant column
@@ -66,7 +69,7 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
       scale_colour_manual("Domain", values = mbie.cols(1:7)) + 
       scale_y_continuous(str_y_axis, label = comma) +
       theme(legend.text = element_text(lineheight = 1), legend.key.height = grid::unit(1, "cm")) +
-      stat_smooth(method = "loess") +
+      stat_smooth(method = "loess", colour = str_sm_line_col) +
       theme(axis.title.x = element_blank()) +
       theme(legend.key = element_blank()) +
       ggtitle(str_title)

@@ -18,11 +18,14 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
   # changes the names of the factor levels.  This produces graphs with nicer labels.
 
   levels(df_data$domain) <- c("Total volume", "Total value", "Total price")
+  df_data$domain <- factor(df_data$domain, levels = c("Total value", "Total volume", "Total price"))
+  
+
   
   cairo_pdf(str_path, width = 11, height = 2.8)
   print(
     ggplot(df_data, aes(x = year, y = value, fill = domain)) +
-      geom_bar(stat = "identity", position = "dodge") +
+      geom_bar(width = 0.7, stat = "identity", position = "dodge") +
       facet_wrap(~domain, scales = "free_y") +
       theme_light(11, base_family = "Calibri") +
       theme(legend.text = element_text(lineheight = 0.6), legend.key.height = grid::unit(0.8, "cm"), 
@@ -31,7 +34,7 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
       scale_y_continuous(label = comma) +
       scale_fill_manual(values = mbie.cols(1:3)) +
       labs(x = "Year") +
-      labs(y = "Value") +
+      labs(y = "") +
       ggtitle(str_title)
   )
   # call to invisible() supresses "null device...." message
