@@ -19,5 +19,16 @@ fn_create_yearly_summary <- function(df_data, a_int_report_year) {
       tot_price = round(tot_price, 1)
     ) %>%
     gather("domain", "value", 2:4)
-  return(df_return)
+  
+  
+  # df_return$domain[df_return$domain == "tot_volume"] <- "Total_voluMMe"
+  df_return$domain <- factor(df_return$domain, 
+                             levels = c("tot_value", "tot_volume", "tot_price"),
+                             labels = c("Total value", "Total volume", "Total price"),
+                             ordered = TRUE)
+  
+  return(as.data.frame(df_return))
+  
+  
+  
 }

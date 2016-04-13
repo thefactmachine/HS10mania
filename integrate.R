@@ -107,7 +107,7 @@ str_month_end <- paste0(format(dte_end_date, "%B")," - " , format(dte_end_date, 
 int_report_year <- ifelse(month(dte_end_date) == 12, 
               year(dte_end_date), year(dte_end_date) - 1)
 
-# This is testing stuff
+# THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
 # lst_prod_codes <- lst_prod_codes[c("peas")]
  
