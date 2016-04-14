@@ -9,33 +9,3 @@
 
 # Following used for development. Use Tred source for production
 inputs/*.rda
-
-
-outputs/compile_tex/*.pdf
-outputs/compile_tex/*.tex
-
-outputs/consolidated_pdf/*.pdf
-
-outputs/cover_page/*.pdf
-outputs/cover_page/*.tex
-
-outputs/graphs/monthly_number_countries/*.pdf
-outputs/graphs/monthly_value/*.pdf
-outputs/graphs/monthly_volume/*.pdf
-outputs/graphs/smoothed_priced/*.pdf
-outputs/graphs/yearly_summary/*.pdf
-
-outputs/latex_knitr/*.rnw
-outputs/latex_table/*.tex
-outputs/latex_tex/*.tex
-
-outputs/pdf/*.pdf
-
-
-
-
-
-
-
-
-
