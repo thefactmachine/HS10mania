@@ -78,7 +78,8 @@ source('R/grooming/fn_read_data_and_convert_units.R')
 source('R/create_cover_page/fn_create_pdf_cover_page.R')
 # once we have generated the pdfs, this joins them all together
 source('R/create_pdf_compile/fn_create_pdf_compilation.R')
-
+# create .gitignores for each directory in output
+source('R/fn_create_git_ignores.R')
 
 # read in data, convert the units and renname a few countries
 df_me_exports <- fn_read_data_and_convert_units() %>% fn_country_mapping()
@@ -141,3 +142,6 @@ invisible(fn_create_pdf_cover_page(str_month_end))
 str_file_suffix <- paste0(format(dte_end_date, "%Y"),"-", format(dte_end_date, "%m"))
 # the following joins up the cover page with individual product pdfs into a single conscolidated document.
 fn_create_pdf_compilation(glob.env$vct_pdf_names, str_file_suffix)
+# create .gitigores for each sub-directory in outputs/
+fn_create_git_ignores()
+
