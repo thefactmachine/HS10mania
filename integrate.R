@@ -56,6 +56,8 @@ options(stringsAsFactors = FALSE)
 # disable scientific notation
 options(scipen = 999)
 
+# setwd("e://eir_test")
+
 # set work directory -
 PROJHOME <- getwd()
 
@@ -110,7 +112,7 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 
 # THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
-# lst_prod_codes <- lst_prod_codes[c("peas")]
+ lst_prod_codes <- lst_prod_codes[c("peas")]
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()
@@ -124,6 +126,14 @@ glob.env$vct_disp_dates <- c(today = format(Sys.Date(), "%B %d, %Y"),
                              min = format(min(df_me_exports$Date), "%B %Y" ),
                              max = format(max(df_me_exports$Date), "%B %Y" ))
 
+
+
+
+
+
+
+
+#fn_wrapper_create_product_report("peas")
 
 # invisible() suppresses output from lapply
 invisible(
