@@ -28,7 +28,7 @@
 #                 limits the set of products to just Salmon and Honey.  The user can uncomment this line to run the program for
 #                 all products.
 
-# Peer review: Ilkka Havukkala 18 April in progress
+# Peer review: Ilkka Havukkala 18 April: in progress, RTudio crashed at after "jams_jellies" 
 
 
 ### clear working space
@@ -96,15 +96,20 @@ source('R/create_pdf_compile/fn_create_pdf_compilation.R')
 # create .gitignores for each directory in output
 source('R/fn_create_git_ignores.R')
 
+
 ########
 # Processing starts from here
 ########
 
 
-# read in data, convert the units and renname a few countries
+# manual refresh retrieval of latest data from TRED, currently latest data 20151130 
+# (see explanation above at line 10)
+# source('load_from_tred.R')
+
+# read in data, convert the units and renname a few countries, fnctions in R/grooming folder
 df_me_exports <- fn_read_data_and_convert_units() %>% fn_country_mapping()
 
-# read products and their codes
+# read products and their codes, function in folder "R"
 lst_prod_codes <- fn_read_product_codes()
 
 # exclude some products.  These have more than 1 measurement unit type
@@ -131,7 +136,7 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 
 # THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
- lst_prod_codes <- lst_prod_codes[c("peas")]
+# lst_prod_codes <- lst_prod_codes[c("peas")]
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()
