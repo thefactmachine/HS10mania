@@ -3,6 +3,9 @@
 #                 The resultant RDA file is about 50 mb -- A large dataset.  SO this program can take
 #                 about 30 minutes to run.  So make yourself a coffee and relax while R does all the work!
 
+# Peer review: Ilkka Havukkala 18 April 2016 ok, latest resulting dataset 20151130.rda
+
+
 rm(list = ls())
 library(RODBC)
 library(reshape2)
@@ -19,6 +22,8 @@ New_Zealand_Exports <- ImportTS2(TRED, "New Zealand Overseas Merchandise Trade: 
 Exports_By_Country <- dcast(New_Zealand_Exports,
                              TimePeriod + CV1 + CV2 + CV4 ~ CV3,
                              value.var = c("Value"))
+
+# change to dplyr, e.g  spread(New_Zealand_Exports, CV3, Value) etc
 
 
 names(Exports_By_Country)[1:4] = c("Date", "Country", "Harmonised_System_Code", "Unit_Qty")

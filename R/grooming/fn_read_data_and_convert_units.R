@@ -13,6 +13,7 @@ fn_read_data_and_convert_units <- function() {
     ## club the two data sets together and return the result
    
     ##  Author:Mark Hatcher, Sector Trends 2015.
+    ## Peer review: Ilkka Havukkala 18 April 2016 ok
     
     # ======================================================
     # load in merchandise exports and call it "df_exports"  (3630442)
