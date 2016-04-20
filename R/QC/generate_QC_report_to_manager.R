@@ -11,7 +11,7 @@
 ##  Peer reviewed by : 
 
 ## first round QC report
-rmarkdown::render("R/QC/Quality_Control_export_intelligence.Rmd") 
+rmarkdown::render("R/QC/Quality_Control_export_intelligence2.Rmd") 
 
 ## Reply from Peter saved in the folder
 

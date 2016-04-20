@@ -10,6 +10,10 @@
    # stage 3: Compare data to Stat NZ base truth and also UN ComTrade website data
    #          ate.g. http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H4&cc=0302142   
 
+  # stage 4: Prepare a list of output .png files
+  # stage 5: Prepare .Rmd file with .png file link list at bottom
+
+
    # Author: 13 April 2016 Ilkka Havukkala
    # Peer review: 
    
@@ -21,6 +25,11 @@
    ####
    # stage 1: check which scripts are peer_reviewed
    ####
+   
+   # before running QC, remove all current outputs, 
+   #  to avoid superfluous .rnw file hits made for pdf outputs
+   # removes all files from /output/*
+   fn_remove_files_from_output_dir()   
    
    ## Generate list of scripts needing/having peer_review
 
@@ -74,10 +83,41 @@
    
    # dataframe final is put into html report for QC
    
+
+   
    
    #####
-   # stage 2: check basics of TRED dataframes
+   # stage 4: Prepare a list of output .png files to show in QC report, append to .Rmd file
    #####
+   
+   
+   mypics   <- grep("\\.png", value = TRUE, ignore.case = TRUE, 
+                    as.character(allfiles$myfile ) )  
+   
+   mylinks = paste0("****************************************************<br>",
+                    "No PNG plots in this repository currently  " )
+   
+   if(length(mypics) > 0 ) {
+   mylinks <- paste0("****************************************************<br>", 
+                     mypics, "  ![](.", mypics, ")  ")
+   }
+   
+   
+   #####
+   # stage 5: Prepare .Rmd file with .png file link list at bottom
+   #####
+   
+   # make final copy of .Rmd file, to which is appended the list of image links
+   
+   file.copy("R/QC/Quality_Control_export_intelligence.Rmd", 
+             "R/QC/Quality_Control_export_intelligence2.Rmd", overwrite = TRUE )
+   
+   
+   write(mylinks, file = "R/QC/Quality_Control_export_intelligence2.Rmd", append = TRUE, sep = "\n")
+   
+  
+   
+   
 #    
 #    
 #    ## check data in TRED PROD

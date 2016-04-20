@@ -67,115 +67,117 @@ img {
 
 
 <p>Peer review of this file: to do</p>
-<p>The latest run and git merged version of this document is available at <a href="file:///P:/OTSP/export_intelligence/R/QC/Quality_Control_export_intelligence.html">master repo</a></p>
+<p>The latest run and git merged version of this document is available at <a href="file:///P:/OTSP/export_intelligence/R/QC/Quality_Control_export_intelligence2.html">master repo</a></p>
 <pre class="r"><code>QC_rundate  # when R/QC/checks_QC.r was last run</code></pre>
-<pre><code>## [1] &quot;Mon Apr 18 12:17:02 2016&quot;</code></pre>
+<pre><code>## [1] &quot;Wed Apr 20 15:01:14 2016&quot;</code></pre>
 <p>The QC checks that PDF reports data corresponds to the TRED data and the Stat NZ data. Cross-checks also to UN comtrade website, e.g. [<a href="http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&amp;cc=030211" class="uri">http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&amp;cc=030211</a>]</p>
 <p>NB IMPORTANT TO ENSURE THAT ALL SCRIPTS HAVE BEEN REVIEWED.</p>
 <p>Please <strong>Agree</strong> or <strong>Disagree</strong> that the QC is adequate, and thereby <strong>Grant</strong> or <strong>Deny</strong> permission to release the data for MBIE and/or public consumption.</p>
 <div id="peer_reviews" class="section level1">
 <h1>Peer_reviews</h1>
 <pre class="r"><code>final</code></pre>
-<pre><code>##  [1] &quot;./integrate.R&quot;                                                                 
-##  [2] &quot;     # Peer review: Ilkka Havukkala 18 April in progress&quot;                      
-##  [3] &quot;./load_from_tred.R&quot;                                                            
-##  [4] &quot;     Missing Peer_review line to add&quot;                                          
-##  [5] &quot;./outputs/latex_knitr/peas.rnw&quot;                                                
-##  [6] &quot;     Missing Peer_review line to add&quot;                                          
-##  [7] &quot;./R/create_cover_page/fn_create_cover_tex.R&quot;                                   
-##  [8] &quot;     Missing Peer_review line to add&quot;                                          
-##  [9] &quot;./R/create_cover_page/fn_create_pdf_cover_page.R&quot;                              
-## [10] &quot;     Missing Peer_review line to add&quot;                                          
-## [11] &quot;./R/create_graphs/fn_create_graph_monthly.R&quot;                                   
-## [12] &quot;     Missing Peer_review line to add&quot;                                          
-## [13] &quot;./R/create_graphs/fn_create_graph_smoothed_price.R&quot;                            
-## [14] &quot;     Missing Peer_review line to add&quot;                                          
-## [15] &quot;./R/create_graphs/fn_create_graph_yearly_summary.R&quot;                            
-## [16] &quot;     Missing Peer_review line to add&quot;                                          
-## [17] &quot;./R/create_graphs/fn_create_monthly_price.R&quot;                                   
-## [18] &quot;     Missing Peer_review line to add&quot;                                          
-## [19] &quot;./R/create_graphs/fn_create_yearly_summary.R&quot;                                  
-## [20] &quot;     Missing Peer_review line to add&quot;                                          
-## [21] &quot;./R/create_graphs/fn_filter_HS10_codes.R&quot;                                      
-## [22] &quot;     Missing Peer_review line to add&quot;                                          
-## [23] &quot;./R/create_graphs/fn_monthly_summary.R&quot;                                        
-## [24] &quot;     Missing Peer_review line to add&quot;                                          
-## [25] &quot;./R/create_graphs/legacy_function_remove_outliers.R&quot;                           
-## [26] &quot;     Missing Peer_review line to add&quot;                                          
-## [27] &quot;./R/create_pdf/fn_create_tex_file.R&quot;                                           
-## [28] &quot;     Missing Peer_review line to add&quot;                                          
-## [29] &quot;./R/create_pdf/fn_get_unique_HS10_stubs.R&quot;                                     
-## [30] &quot;     Missing Peer_review line to add&quot;                                          
-## [31] &quot;./R/create_pdf_compile/fn_create_pdf_compilation.R&quot;                            
-## [32] &quot;     Missing Peer_review line to add&quot;                                          
-## [33] &quot;./R/create_pdf_compile/fn_create_pdf_compile_tex.R&quot;                            
-## [34] &quot;     Missing Peer_review line to add&quot;                                          
-## [35] &quot;./R/create_table_data/fn_calc_pc.R&quot;                                            
-## [36] &quot;     Missing Peer_review line to add&quot;                                          
-## [37] &quot;./R/create_table_data/fn_country_product_rolling_year.R&quot;                       
-## [38] &quot;     Missing Peer_review line to add&quot;                                          
-## [39] &quot;./R/create_table_format/fn_fmt_kilo_to_tonne.R&quot;                                
-## [40] &quot;     Missing Peer_review line to add&quot;                                          
-## [41] &quot;./R/create_table_format/fn_fmt_millions.R&quot;                                     
-## [42] &quot;     Missing Peer_review line to add&quot;                                          
-## [43] &quot;./R/create_table_format/fn_fmt_pc.R&quot;                                           
-## [44] &quot;     Missing Peer_review line to add&quot;                                          
-## [45] &quot;./R/create_table_format/fn_fmt_price.R&quot;                                        
-## [46] &quot;     Missing Peer_review line to add&quot;                                          
-## [47] &quot;./R/create_table_format/fn_fmt_single_dec.R&quot;                                   
-## [48] &quot;     Missing Peer_review line to add&quot;                                          
-## [49] &quot;./R/create_table_latex/fn_create_table_body.R&quot;                                 
-## [50] &quot;     Missing Peer_review line to add&quot;                                          
-## [51] &quot;./R/create_table_latex/fn_create_table_caption.R&quot;                              
-## [52] &quot;     Missing Peer_review line to add&quot;                                          
-## [53] &quot;./R/create_table_latex/fn_create_table_columns.R&quot;                              
-## [54] &quot;     Missing Peer_review line to add&quot;                                          
-## [55] &quot;./R/create_table_latex/fn_create_table_dimensions.R&quot;                           
-## [56] &quot;     Missing Peer_review line to add&quot;                                          
-## [57] &quot;./R/create_table_latex/fn_wrapper_create_latex_table.R&quot;                        
-## [58] &quot;     Missing Peer_review line to add&quot;                                          
-## [59] &quot;./R/fn_create_git_ignores.R&quot;                                                   
-## [60] &quot;     Missing Peer_review line to add&quot;                                          
-## [61] &quot;./R/fn_message_log.R&quot;                                                          
-## [62] &quot;     Missing Peer_review line to add&quot;                                          
-## [63] &quot;./R/fn_read_product_codes.R&quot;                                                   
-## [64] &quot;     Missing Peer_review line to add&quot;                                          
-## [65] &quot;./R/fn_top_n_countries_rolling.R&quot;                                              
-## [66] &quot;     Missing Peer_review line to add&quot;                                          
-## [67] &quot;./R/fn_wrapper_compile_pdf.R&quot;                                                  
-## [68] &quot;     Missing Peer_review line to add&quot;                                          
-## [69] &quot;./R/fn_wrapper_create_all_graphs.R&quot;                                            
-## [70] &quot;     Missing Peer_review line to add&quot;                                          
-## [71] &quot;./R/fn_wrapper_create_product_report.R&quot;                                        
-## [72] &quot;     Missing Peer_review line to add&quot;                                          
-## [73] &quot;./R/fn_wrapper_create_table.R&quot;                                                 
-## [74] &quot;     Missing Peer_review line to add&quot;                                          
-## [75] &quot;./R/grooming/fn_country_mapping.R&quot;                                             
-## [76] &quot;     Missing Peer_review line to add&quot;                                          
-## [77] &quot;./R/grooming/fn_get_distinct_units.R&quot;                                          
-## [78] &quot;     Missing Peer_review line to add&quot;                                          
-## [79] &quot;./R/grooming/fn_read_data_and_convert_units.R&quot;                                 
-## [80] &quot;     Missing Peer_review line to add&quot;                                          
-## [81] &quot;./R/QC/checks_QC.r&quot;                                                            
-## [82] &quot;        # Peer review: &quot;                                                       
-## [83] &quot;           hits &lt;- grep(\&quot;Peer review\&quot;, ignore.case = TRUE, value = TRUE, x) &quot;
-## [84] &quot;./R/QC/generate_QC_report_to_manager.R&quot;                                        
-## [85] &quot;     ##  Peer reviewed by : &quot;                                                  
-## [86] &quot;./R/QC/Quality_Control_export_intelligence.Rmd&quot;                                
-## [87] &quot;     Peer review of this file: to do&quot;                                          
-## [88] &quot;./R/utilities/fn_create_display_title.R&quot;                                       
-## [89] &quot;     Missing Peer_review line to add&quot;                                          
-## [90] &quot;./R/utilities/fn_get_date_parameters.R&quot;                                        
-## [91] &quot;     Missing Peer_review line to add&quot;                                          
-## [92] &quot;./R/utilities/fn_get_unit_parameters.R&quot;                                        
-## [93] &quot;     Missing Peer_review line to add&quot;                                          
-## [94] &quot;./R/utilities/fn_read_unit_lookup.R&quot;                                           
-## [95] &quot;     Missing Peer_review line to add&quot;                                          
-## [96] &quot;./R/utilities/fn_remove_files_from_output_dir.R&quot;                               
-## [97] &quot;     Missing Peer_review line to add&quot;</code></pre>
+<pre><code>##  [1] &quot;./integrate.R&quot;                                                                              
+##  [2] &quot;     # Peer review: Ilkka Havukkala 18 April: in progress&quot;                                  
+##  [3] &quot;./load_from_tred.R&quot;                                                                         
+##  [4] &quot;     # Peer review: Ilkka Havukkala 18 April 2016 ok, latest resulting dataset 20151130.rda&quot;
+##  [5] &quot;./R/create_cover_page/fn_create_cover_tex.R&quot;                                                
+##  [6] &quot;     Missing Peer_review line to add&quot;                                                       
+##  [7] &quot;./R/create_cover_page/fn_create_pdf_cover_page.R&quot;                                           
+##  [8] &quot;     Missing Peer_review line to add&quot;                                                       
+##  [9] &quot;./R/create_graphs/fn_create_graph_monthly.R&quot;                                                
+## [10] &quot;     Missing Peer_review line to add&quot;                                                       
+## [11] &quot;./R/create_graphs/fn_create_graph_smoothed_price.R&quot;                                         
+## [12] &quot;     Missing Peer_review line to add&quot;                                                       
+## [13] &quot;./R/create_graphs/fn_create_graph_yearly_summary.R&quot;                                         
+## [14] &quot;     Missing Peer_review line to add&quot;                                                       
+## [15] &quot;./R/create_graphs/fn_create_monthly_price.R&quot;                                                
+## [16] &quot;     Missing Peer_review line to add&quot;                                                       
+## [17] &quot;./R/create_graphs/fn_create_yearly_summary.R&quot;                                               
+## [18] &quot;     Missing Peer_review line to add&quot;                                                       
+## [19] &quot;./R/create_graphs/fn_filter_HS10_codes.R&quot;                                                   
+## [20] &quot;     Missing Peer_review line to add&quot;                                                       
+## [21] &quot;./R/create_graphs/fn_monthly_summary.R&quot;                                                     
+## [22] &quot;     Missing Peer_review line to add&quot;                                                       
+## [23] &quot;./R/create_graphs/legacy_function_remove_outliers.R&quot;                                        
+## [24] &quot;     Missing Peer_review line to add&quot;                                                       
+## [25] &quot;./R/create_pdf/fn_create_tex_file.R&quot;                                                        
+## [26] &quot;     Missing Peer_review line to add&quot;                                                       
+## [27] &quot;./R/create_pdf/fn_get_unique_HS10_stubs.R&quot;                                                  
+## [28] &quot;     Missing Peer_review line to add&quot;                                                       
+## [29] &quot;./R/create_pdf_compile/fn_create_pdf_compilation.R&quot;                                         
+## [30] &quot;     Missing Peer_review line to add&quot;                                                       
+## [31] &quot;./R/create_pdf_compile/fn_create_pdf_compile_tex.R&quot;                                         
+## [32] &quot;     Missing Peer_review line to add&quot;                                                       
+## [33] &quot;./R/create_table_data/fn_calc_pc.R&quot;                                                         
+## [34] &quot;     Missing Peer_review line to add&quot;                                                       
+## [35] &quot;./R/create_table_data/fn_country_product_rolling_year.R&quot;                                    
+## [36] &quot;     Missing Peer_review line to add&quot;                                                       
+## [37] &quot;./R/create_table_format/fn_fmt_kilo_to_tonne.R&quot;                                             
+## [38] &quot;     Missing Peer_review line to add&quot;                                                       
+## [39] &quot;./R/create_table_format/fn_fmt_millions.R&quot;                                                  
+## [40] &quot;     Missing Peer_review line to add&quot;                                                       
+## [41] &quot;./R/create_table_format/fn_fmt_pc.R&quot;                                                        
+## [42] &quot;     Missing Peer_review line to add&quot;                                                       
+## [43] &quot;./R/create_table_format/fn_fmt_price.R&quot;                                                     
+## [44] &quot;     Missing Peer_review line to add&quot;                                                       
+## [45] &quot;./R/create_table_format/fn_fmt_single_dec.R&quot;                                                
+## [46] &quot;     Missing Peer_review line to add&quot;                                                       
+## [47] &quot;./R/create_table_latex/fn_create_table_body.R&quot;                                              
+## [48] &quot;     Missing Peer_review line to add&quot;                                                       
+## [49] &quot;./R/create_table_latex/fn_create_table_caption.R&quot;                                           
+## [50] &quot;     Missing Peer_review line to add&quot;                                                       
+## [51] &quot;./R/create_table_latex/fn_create_table_columns.R&quot;                                           
+## [52] &quot;     Missing Peer_review line to add&quot;                                                       
+## [53] &quot;./R/create_table_latex/fn_create_table_dimensions.R&quot;                                        
+## [54] &quot;     Missing Peer_review line to add&quot;                                                       
+## [55] &quot;./R/create_table_latex/fn_wrapper_create_latex_table.R&quot;                                     
+## [56] &quot;     Missing Peer_review line to add&quot;                                                       
+## [57] &quot;./R/fn_create_git_ignores.R&quot;                                                                
+## [58] &quot;     Missing Peer_review line to add&quot;                                                       
+## [59] &quot;./R/fn_message_log.R&quot;                                                                       
+## [60] &quot;     Missing Peer_review line to add&quot;                                                       
+## [61] &quot;./R/fn_read_product_codes.R&quot;                                                                
+## [62] &quot;     Missing Peer_review line to add&quot;                                                       
+## [63] &quot;./R/fn_top_n_countries_rolling.R&quot;                                                           
+## [64] &quot;     Missing Peer_review line to add&quot;                                                       
+## [65] &quot;./R/fn_wrapper_compile_pdf.R&quot;                                                               
+## [66] &quot;     Missing Peer_review line to add&quot;                                                       
+## [67] &quot;./R/fn_wrapper_create_all_graphs.R&quot;                                                         
+## [68] &quot;     Missing Peer_review line to add&quot;                                                       
+## [69] &quot;./R/fn_wrapper_create_product_report.R&quot;                                                     
+## [70] &quot;     Missing Peer_review line to add&quot;                                                       
+## [71] &quot;./R/fn_wrapper_create_table.R&quot;                                                              
+## [72] &quot;     Missing Peer_review line to add&quot;                                                       
+## [73] &quot;./R/grooming/fn_country_mapping.R&quot;                                                          
+## [74] &quot;     Missing Peer_review line to add&quot;                                                       
+## [75] &quot;./R/grooming/fn_get_distinct_units.R&quot;                                                       
+## [76] &quot;     Missing Peer_review line to add&quot;                                                       
+## [77] &quot;./R/grooming/fn_read_data_and_convert_units.R&quot;                                              
+## [78] &quot;         ## Peer review: Ilkka Havukkala 18 April 2016 ok&quot;                                  
+## [79] &quot;./R/QC/checks_QC.r&quot;                                                                         
+## [80] &quot;        # Peer review: &quot;                                                                    
+## [81] &quot;           hits &lt;- grep(\&quot;Peer review\&quot;, ignore.case = TRUE, value = TRUE, x) &quot;             
+## [82] &quot;./R/QC/generate_QC_report_to_manager.R&quot;                                                     
+## [83] &quot;     ##  Peer reviewed by : &quot;                                                               
+## [84] &quot;./R/QC/Quality_Control_export_intelligence.Rmd&quot;                                             
+## [85] &quot;     Peer review of this file: to do&quot;                                                       
+## [86] &quot;./R/QC/Quality_Control_export_intelligence2.Rmd&quot;                                            
+## [87] &quot;     Peer review of this file: to do&quot;                                                       
+## [88] &quot;./R/utilities/fn_create_display_title.R&quot;                                                    
+## [89] &quot;     Missing Peer_review line to add&quot;                                                       
+## [90] &quot;./R/utilities/fn_get_date_parameters.R&quot;                                                     
+## [91] &quot;     Missing Peer_review line to add&quot;                                                       
+## [92] &quot;./R/utilities/fn_get_unit_parameters.R&quot;                                                     
+## [93] &quot;     Missing Peer_review line to add&quot;                                                       
+## [94] &quot;./R/utilities/fn_read_unit_lookup.R&quot;                                                        
+## [95] &quot;     Missing Peer_review line to add&quot;                                                       
+## [96] &quot;./R/utilities/fn_remove_files_from_output_dir.R&quot;                                            
+## [97] &quot;     Missing Peer_review line to add&quot;                                                       
+## [98] &quot;./reconciliation/reconcile_to_tred.R&quot;                                                       
+## [99] &quot;     Missing Peer_review line to add&quot;</code></pre>
 </div>
-<div id="initial-comments" class="section level1">
-<h1>Initial comments</h1>
+<div id="comments" class="section level1">
+<h1>Comments</h1>
 <div id="scope-of-each-commodity-summary-page" class="section level2">
 <h2>Scope of each commodity summary page</h2>
 <p>The inputs/concordances/product_codes.csv file has the exact full codes used to make each summary report for Salmon, Chicken, Onions. NB some codes have 9 numbers, maybe leading zero missing, need to check carefully data matching.</p>
@@ -192,19 +194,24 @@ img {
 </div>
 <div id="basic-checks" class="section level1">
 <h1>Basic checks</h1>
-<div id="number-of-observations-and-variables" class="section level2">
-<h2>number of observations and variables</h2>
+<div id="number-of-observations-and-variables-or-the-like" class="section level2">
+<h2>number of observations and variables or the like</h2>
 <p>TO UPDATE</p>
 <pre class="r"><code>str(final)</code></pre>
-<pre><code>##  chr [1:97] &quot;./integrate.R&quot; ...</code></pre>
+<pre><code>##  chr [1:99] &quot;./integrate.R&quot; ...</code></pre>
+</div>
+<div id="suggestions" class="section level2">
+<h2>Suggestions</h2>
+<p>1 Formalise the generation of commodity code lists and their pooling for one commodity name</p>
+<p>2 Modify code to work recursively to include all subcategories of desired scope, e.g. all fish related commodities under</p>
+<p>0302 Name: Fish, fresh or chilled, whole<br />or<br />0302 Name: Fish, fresh or chilled, whole</p>
+<p>Also, import the UN comtrad Name into the dataset for displaying automatically in titles.</p>
 </div>
 </div>
-<div id="sample-plots" class="section level1">
-<h1>Sample plots</h1>
-<div id="time-series" class="section level2">
-<h2>Time series</h2>
+<div id="test-plots" class="section level1">
+<h1>Test plots</h1>
 <p>image links here if needed, additionally plotted from Stat NZ and/or UN ComTrade for comparison</p>
-</div>
+<p>****************************************************<br>No PNG plots in this repository currently</p>
 </div>
 
 
