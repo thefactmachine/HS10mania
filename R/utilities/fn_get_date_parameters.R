@@ -6,37 +6,30 @@ fn_get_date_parameters <- function(vct_dates, int_n_years_prev) {
   # date which is 12 periods (ie. months) previous. This returns
   # a pair of dates. So..in total there are 2 x pairs of dates returned
  
-  # this is a helper function which gets used repeatedly
-  fn_last_day_n_years_prev <- function(dte_input, a_int_years_prev) {
-    # function gets the date input and returns a date n years previous
-    # the returned date is the last day of the month.
-    # Example (assuming int_years_prev = 1) ...
-    # if input is "2015-09-30" ==> output is "2014-10-31"
-
-    # hard code the input date to be the first day of the month
-    dte_input_first_day <- ymd(paste0(year(dte_input),"-", month(dte_input), "-", "01"))
-    # convert the input parameter into months.    
-    int_months_prev <- (a_int_years_prev * 12) - 2
-    dte_return <- (dte_input_first_day - months(int_months_prev)) - days(1)
-    
-    # cast the result from a lubridate type date to a normal R date
-    return(as.Date(dte_return))
+  fn_last_day_of_month <- function(dte_param) {
+    # get the first day of the month for the input date (2012-11-23 ==> 2012-11-01)
+    dte_first_day <- ymd(paste0(year(dte_param),"-", month(dte_param), "-", "01"))
+    # go one month in advance
+    dte_last_day <- dte_first_day + months(1)  - days(1)
+    return(dte_last_day)
   }
 
   # it is more effecient to create a vector of unique dates here
   vct_unique_dates <- unique(vct_dates) %>% sort()
 
   # get the current pair of dates - the distance between these is 12 months
+  # need to cast the lubridate dates back to normal dates
   dte_curr_upper <- max(vct_unique_dates)
-  dte_curr_lower <- fn_last_day_n_years_prev(dte_curr_upper, a_int_years_prev = 1)
-  
+  dte_curr_lower <- fn_last_day_of_month(dte_curr_upper - months(11)) %>% as.Date()
+ 
   # get the previous (i.e n years previous) pair of dates
-  dte_prev_upper <- fn_last_day_n_years_prev(dte_curr_upper, int_n_years_prev)
-  dte_prev_lower <- fn_last_day_n_years_prev(dte_curr_lower, int_n_years_prev)
+  dte_prev_upper <- fn_last_day_of_month(dte_curr_upper - years(int_n_years_prev)) %>% as.Date()
+  dte_prev_lower <- fn_last_day_of_month(dte_prev_upper - months(11)) %>% as.Date()
 
   # assemble the 4 values in named vector: "if you don't have a name you dont exist"
-  vct_return <- c("curr_upper" = dte_curr_upper, "curr_lower" =  dte_curr_lower, 
+  vct_return <- c("curr_upper" = dte_curr_upper, "curr_lower" = dte_curr_lower, 
                   "prev_upper" = dte_prev_upper, "prev_lower" = dte_prev_lower)
+
   
   # all the above was good in theory..but lets see if our calculations..
   # ..are contained in the input data..if there not then we have a problem
@@ -47,7 +40,6 @@ fn_get_date_parameters <- function(vct_dates, int_n_years_prev) {
 
   return(vct_return)
 }
-
 
 
 
