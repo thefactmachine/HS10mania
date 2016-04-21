@@ -1,4 +1,3 @@
-<<<<<<< HEAD
    # Status: draft
    
    # Purpose: QC Mark Hatcher's export intelligence repository
@@ -173,7 +172,6 @@
    ## next go to http://theviz.wd.govt.nz/tred_interactive/
    ## and replot similar plot via shiny and save as shinyplot.png in same place.
    
-=======
    # Status: draft
    
    # Purpose: QC Mark Hatcher's export intelligence repository
@@ -388,5 +386,5 @@
    ## next go to http://theviz.wd.govt.nz/tred_interactive/
    ## and replot similar plot via shiny and save as shinyplot.png in same place.
    
->>>>>>> 070630970c460d2354d2a50d378cb7cf301dd849
+
    

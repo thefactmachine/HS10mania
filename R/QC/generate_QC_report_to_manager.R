@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##  Purpose: To generate a QC report for Mark Hatcher's export intelligence reports repository
 ##           at P:\OTSP\export_intelligence
 ##  Author: Ilkka Havukkala
@@ -18,7 +17,7 @@ rmarkdown::render("R/QC/Quality_Control_export_intelligence.Rmd")
 
 ## final response/action 
 ## rmarkdown::render("") 
-=======
+
 ##  Purpose: To generate a QC report for Mark Hatcher's export intelligence reports repository
 ##           at P:\OTSP\export_intelligence
 ##  Author: Ilkka Havukkala
@@ -38,4 +37,3 @@ rmarkdown::render("R/QC/Quality_Control_export_intelligence2.Rmd")
 
 ## final response/action 
 ## rmarkdown::render("") 
->>>>>>> 070630970c460d2354d2a50d378cb7cf301dd849
