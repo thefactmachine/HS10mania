@@ -194,6 +194,8 @@ df_complete$elasticity <- round(df_complete$elasticity, 2) %>% format(., big.mar
 
 df_complete
 
+setwd("/Volumes/SILVER_FAT/export_intelligence")
+
 
 
 
