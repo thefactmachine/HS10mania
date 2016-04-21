@@ -1,6 +1,7 @@
 fn_create_table_caption <- function(vct_a, a_dte_period_end) { 
   # functions takes basic table parameters 
   # and creates a Latex formatted table caption
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   # replace underscores with spaces for the product name to display
   # re-format the product name for the title

@@ -2,6 +2,8 @@ fn_wrapper_create_product_report <- function(a_str_product) {
   # this function creates a PDF file (and associated graphs and tex files..) each time it  is called.  
   # "a_str_product" is the name of a specific product. eg "salmon" 
   # This function is called from integrate.R
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
 
   # we need to work out what the associated units of measurement are for specific product
   source('R/grooming/fn_get_distinct_units.R')

@@ -1,6 +1,8 @@
 fn_fmt_price <-function(x) {
   # function's purpose is to convert a numeric to a string prepended with a $ sign
-  # exmample 11.222 becomes "$11.2"
+  # example 11.222 becomes "$11.2"
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
   
   # x comes as a df and paste0() returns a vector.  We want the
   # function to return a data frame with the incoming column name preserved.

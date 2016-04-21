@@ -4,7 +4,10 @@ library(data.table)
 library(lubridate)
 library(dplyr)
 
+# what is this? Ilkka (to comment out?)
 setwd("/Volumes/SILVER_FAT/export_intelligence/reconciliation")
+
+
 # PURPOSE OF THIS SCRIPT ======================
 # The purpose of this script is to check the TRED load process.
 # The output from tred is stored as an RDA file. It is : "input_data/Exports_By_Country_20151130.rda"
@@ -23,6 +26,7 @@ setwd("/Volumes/SILVER_FAT/export_intelligence/reconciliation")
 
 # This is considered immaterial and therefore will not be investigated further.
 
+# Peer review: Ilkka Havukkala in progress
 
 
 

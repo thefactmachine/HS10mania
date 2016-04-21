@@ -2,6 +2,7 @@ fn_create_yearly_summary <- function(df_data, a_int_report_year) {
   # creates a yearly summary of volume, value & price (3 measures) for each year (n_years)
   # initally creates a n_years (rows) by 3 (columns) measures data_frame but for display
   # in ggplot, this is re-formatted using gather() to a structure with nrows = n_years * 3
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   df_return <- df_data %>%
     mutate(year = lubridate::year(date)) %>%

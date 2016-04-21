@@ -2,6 +2,7 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
                                     str_graph_type, str_title_yr_end, ...) {
   # function creates a monthly graph of either: value, volume or number of countries.
   # the specific graph is dependent on the parameter str_type. The remaining parameters are:
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   # df_data:  contains columns for each of the three graphs
   # str_dir_pfx: This is concatenated with a specific directory for each of the three graphs

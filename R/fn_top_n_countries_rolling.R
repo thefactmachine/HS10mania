@@ -2,6 +2,7 @@ fn_top_n_countries_rolling <- function(df_data, vct_HS10, int_top_n, dte_lower_m
   # function receives data, vector of HS10 codes, the year (e.g 2015) and number of values to return
   # returns the top n countries which exported the specified HS10 codes in the specified year
   # requires library(dplyr) library(lazyeval) library(lubridate)
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   # set up things with non-standard evalutation so that function can be parameterised.
   filter_cond_HS10 <- interp(quote(x %in% y), x=as.name("Harmonised_System_Code"), y = vct_HS10)

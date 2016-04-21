@@ -2,6 +2,7 @@ fn_create_cover_tex <- function(str_month_year) {
   # purpose of this function is to return a string in tex format
   # the only parameter is string containing the month and year...
   # example: "September 2015"
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   line_a10 <- "\\documentclass{mbie-report}"
   line_a20 <- "\\classification{}"

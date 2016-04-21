@@ -28,7 +28,10 @@
 #                 limits the set of products to just Salmon and Honey.  The user can uncomment this line to run the program for
 #                 all products.
 
-# Peer review: Ilkka Havukkala 18 April: in progress, RTudio crashed at after "jams_jellies" 
+# Peer review: Ilkka Havukkala 18 April: in progress
+
+# NB  CRASHES RTudio if you try to use 32bit R in RStudion. Make sure you are
+# using 64bit R console or RStudio
 
 
 ### clear working space
@@ -104,20 +107,20 @@ source('R/fn_create_git_ignores.R')
 
 # manual refresh retrieval of latest data from TRED, currently latest data 20151130 
 # (see explanation above at line 10)
-# source('load_from_tred.R')
+# source('load_from_tred.R')    # tested ok
 
 # read in data, convert the units and renname a few countries, fnctions in R/grooming folder
-df_me_exports <- fn_read_data_and_convert_units() %>% fn_country_mapping()
+df_me_exports <- fn_read_data_and_convert_units() %>% fn_country_mapping()  # tested ok
 
 # read products and their codes, function in folder "R"
-lst_prod_codes <- fn_read_product_codes()
+lst_prod_codes <- fn_read_product_codes()                                   # tested ok
 
 # exclude some products.  These have more than 1 measurement unit type
-vct_exclusions <- c("spirits", "beer", "cider_alcoholic")
-lst_prod_codes <- lst_prod_codes[!names(lst_prod_codes) %in% vct_exclusions]
+vct_exclusions <- c("spirits", "beer", "cider_alcoholic")                   # tested ok
+lst_prod_codes <- lst_prod_codes[!names(lst_prod_codes) %in% vct_exclusions] # tested ok
 
 # read in a file that provides parameters associated with each type of unit
-df_unit_lookup <- fn_read_unit_lookup()
+df_unit_lookup <- fn_read_unit_lookup()                                  # tested ok
 
 # define some constants - these don't get changed at all.
 c_num_previous_years = 3
@@ -125,14 +128,15 @@ c_top_n_countries = 6
 
 # define some dates which are used for all reports
 # get the most recent month
-dte_end_date <- max(df_me_exports$Date)
+dte_end_date <- max(df_me_exports$Date)                               # tested ok
 
 # format the most recent month for display (i.e. 31.05.15 => "May -- 2015")
-str_month_end <- paste0(format(dte_end_date, "%B")," - " , format(dte_end_date, "%Y")) 
+str_month_end <- paste0(format(dte_end_date, "%B")," - " , 
+                        format(dte_end_date, "%Y"))                   # tested ok
 
 # get the most recent complete year
 int_report_year <- ifelse(month(dte_end_date) == 12, 
-              year(dte_end_date), year(dte_end_date) - 1)
+              year(dte_end_date), year(dte_end_date) - 1)             # tested ok
 
 # THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
@@ -140,13 +144,13 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
  lst_prod_codes <- lst_prod_codes[c("salmon")]
  
 # before we start producing reports, delete all previous files (output/*)
-fn_remove_files_from_output_dir()
+fn_remove_files_from_output_dir()                                     # tested ok
 
 # create vector with global scope to store PDF file names
 glob.env <- new.env() 
 glob.env$vct_pdf_names <- vector(mode = "character")
 
-# this sets up some dates for disply in fn_create_tex_file()
+# this sets up some dates for display in fn_create_tex_file()
 glob.env$vct_disp_dates <- c(today = format(Sys.Date(), "%B %d, %Y"), 
                              min = format(min(df_me_exports$Date), "%B %Y" ),
                              max = format(max(df_me_exports$Date), "%B %Y" ))
@@ -177,4 +181,11 @@ fn_create_pdf_compilation(glob.env$vct_pdf_names, str_file_suffix)
 # create .gitigores for each sub-directory in outputs/
 fn_create_git_ignores()
 
+#########
+### last step, make QC report, run manually when needed, 
+###   NB removes files in outputs folder, so save first your final PDF reports 
+########
+
+# source("R/QC/checks_QC.r")
+# source("R/QC/generate_QC_report_to_manager.R")
 
