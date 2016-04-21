@@ -182,7 +182,7 @@ fn_create_git_ignores()
 
 #########
 ### last step, make QC report, run manually when needed, 
-###   NB removes files in outputs folder
+###   NB removes files in outputs folder, so save first your final PDF reports 
 ########
 
 # source("R/QC/checks_QC.r")

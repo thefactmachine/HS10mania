@@ -1,5 +1,8 @@
 fn_create_pdf_compilation <- function(vct_pdf_names, str_file_sfx)  {
   # this creates a cover page with a month ending title
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
+  
   source('R/create_pdf_compile/fn_create_pdf_compile_tex.R')
 
   # [1] create the tex file and save the sucker

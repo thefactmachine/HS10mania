@@ -3,6 +3,8 @@ fn_wrapper_create_latex_table <- function(df_table,
                                           dte_end_period) {
   
   # this is a wrapper function that creates a latex table
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
   source("R/create_table_latex/fn_create_table_body.R")
   source("R/create_table_latex/fn_create_table_caption.R")
   source("R/create_table_latex/fn_create_table_columns.R")

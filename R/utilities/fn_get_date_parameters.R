@@ -1,5 +1,7 @@
 fn_get_date_parameters <- function(vct_dates, int_n_years_prev) {
   # int_years_prev is assumed to be an integer
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
   
   # function receives a vector of dates from the entire data
   # set. The function then determines the most recent date and the 

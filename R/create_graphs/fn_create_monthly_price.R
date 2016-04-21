@@ -2,6 +2,7 @@ fn_create_monthly_price <- function(df_data, vct_top_country) {
   # 1.  function creates monthly prices for top six countries by dividing value by volume (df_detail)
   # 2. the function creates average monthly prices for all countries (df_total)
   # 3. the two data frames created above are clubbed together and returned (df_consolidated)
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   source('R/create_graphs/legacy_function_remove_outliers.R')
   

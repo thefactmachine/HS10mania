@@ -2,6 +2,7 @@ fn_create_pdf_compile_tex <- function(vct_pdf_titles){
   # This function gets passed a vector of completed pdf titles
   # it then creates a single tex file that will compile into
   # a single pdf containing the pdf_titles.
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   line_a10 <- "\\documentclass{article}"
   line_a20 <- "\\usepackage{pdfpages}"

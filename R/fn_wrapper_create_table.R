@@ -13,6 +13,9 @@ fn_wrapper_create_table <- function(a_df_exports,
   # [1] Create a df of quantity, value and price for the top n countries (a_vct_top_country). To this
   # data.frame two additional rows are added: "Other" (all remaining countries) and "Total" the function
   # fn_country_product_year() is responsible for this task.
+  
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
 
   source('R/create_table_data/fn_country_product_rolling_year.R')
   

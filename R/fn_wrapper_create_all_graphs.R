@@ -1,6 +1,9 @@
 fn_wrapper_create_all_graphs <- function(a_df_data, a_vct_HS10, a_vct_top_n_country, a_lst_args) {
   
   # These help prepare the relevant data.frames for the 5 graphs
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
+  
   source('R/create_graphs/fn_monthly_summary.R')
   source('R/create_graphs/fn_filter_HS10_codes.R')
   source('R/create_graphs/fn_create_monthly_price.R')

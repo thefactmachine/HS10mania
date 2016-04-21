@@ -1,6 +1,9 @@
 fn_create_pdf_cover_page <- function(str_month_year) {
     
     # this function actually creates the tex file
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
+  
     source('R/create_cover_page/fn_create_cover_tex.R')
     
     fn_message_log("cover page", "starting to create")

@@ -10,6 +10,8 @@ fn_country_mapping <-  function(a_df_exports) {
   ## Then a mapping table is created, containing an exhaustive list of country names
   
   ## Author:Mark Hatcher, Sector Trends 2015.
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
 
     # get a list of distinct countries
   df_country_distinct <- a_df_exports %>% distinct(Country) %>%

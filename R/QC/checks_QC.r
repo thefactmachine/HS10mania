@@ -40,8 +40,8 @@
    
    # remove .Rproj link adn rda files
    allfiles <- allfiles %>% 
-     filter(!grepl('\\.Rproj', myfile) ) %>%
-     filter(!grepl('\\.rda', myfile) ) 
+     filter(!grepl('\\.Rproj', myfile, ignore.case = TRUE) ) %>%
+     filter(!grepl('\\.rda', myfile, ignore.case = TRUE) ) 
      
    
    

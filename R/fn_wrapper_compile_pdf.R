@@ -13,6 +13,9 @@ fn_wrapper_compile_pdf <- function(a_str_product, a_vct_HS10_codes) {
   
   # [4] The resultant pdf file is copied to the "pdf" folder. An intermediate tex file
   # created in the "latex_tex" folder is then created
+
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
   
   source('R/create_pdf/fn_create_tex_file.R')
   # [1] create tex file and save to the  "latex_tex" folder

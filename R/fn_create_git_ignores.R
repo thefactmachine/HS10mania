@@ -1,5 +1,8 @@
 fn_create_git_ignores <- function() {
 
+  # Peer review: Ilkka Havukkala 21 April 2016 OK, add explanation why this is needed
+  
+  
   nline <- paste0("\n")
   str_git_ig <-   paste0("# Ignore everything in this directory", nline,
                   "*", nline,

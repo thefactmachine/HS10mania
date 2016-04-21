@@ -7,6 +7,7 @@ fn_create_tex_file <- function(str_current_product, a_vct_HS10_codes) {
   
   # most of the following comments describe latex functionality rather than
   # R functionality
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   # re-format the product name for the title
   source('R/utilities/fn_create_display_title.R')

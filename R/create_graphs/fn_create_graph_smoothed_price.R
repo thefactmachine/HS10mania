@@ -1,4 +1,7 @@
 fn_create_graph_smoothed_price <- function(df_data, str_dir, str_product, a_int_rpt_year, str_price_unit) {
+
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
   # create a full path to save the png
   str_path <- paste0(str_dir, "/", str_product,  "_smoothed_price.pdf") 
   

@@ -1,6 +1,7 @@
 fn_calc_pc <- function(df_prev, df_curr, int_year_diff) {
   # this function takes two data frames and compares the columns of each data frame
   # to calculate percentages. The Country columns needs to be stripped from each data frame
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
   
   # The following function calculates compounded annual rate of growth. The..
   # function is used by mapply() below

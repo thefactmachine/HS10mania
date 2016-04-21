@@ -6,6 +6,8 @@ fn_fmt_pc <- function(x) {
   # function to return a data frame with the incoming column name preserved.
   # therefore the following trickery is used to preserve our data.frame. 
   #mmm RR is tricky!!!
+  # Peer review: Ilkka Havukkala 21 April 2016 OK
+  
   
   df_a <- round(x * 100, 1)
   # numeric gets coerced to a factor in the following
