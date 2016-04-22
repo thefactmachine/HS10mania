@@ -4,7 +4,7 @@ fn_country_product_rolling_year <- function(df_data, vct_HS10, vct_countries,
   # the function then calculates totals for the group of HS10 codes and for each country ...
   # for the specific year.
   # Peer review: Ilkka Havukkala 21 April 2016 OK
-  
+  fn_message_log(a_str_message = paste0("creating top 6 country specific subsets for: ", dte_lower_month, " to ", dte_upper_month))
   # set up some re-useable parameters
   lst_totals <- list(quantity = ~sum(Total_Exports_Qty), value = ~sum(Total_Exports_NZD_fob))
   lst_price <- list(price = ~(value / quantity))

@@ -3,6 +3,7 @@ fn_calc_pc <- function(df_prev, df_curr, int_year_diff) {
   # to calculate percentages. The Country columns needs to be stripped from each data frame
   # Peer review: Ilkka Havukkala 21 April 2016 OK
   
+  fn_message_log(a_str_message = paste0("calculating CAGR for ", int_year_diff, " year differences"))
   # The following function calculates compounded annual rate of growth. The..
   # function is used by mapply() below
   fn_carg <- function(previous_value, current_value, int_ann_diff) {

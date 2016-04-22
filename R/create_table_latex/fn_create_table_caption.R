@@ -5,6 +5,9 @@ fn_create_table_caption <- function(vct_a, a_dte_period_end) {
   
   # replace underscores with spaces for the product name to display
   # re-format the product name for the title
+  
+  fn_message_log(a_str_message = "creating the caption for the tex table")
+  
   source('R/utilities/fn_create_display_title.R')
   str_product_title <- fn_create_display_title(vct_a["product"])
   

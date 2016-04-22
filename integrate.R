@@ -61,6 +61,7 @@ options(stringsAsFactors = FALSE)
 options(scipen = 999)
 
 # setwd("e://eir_test")
+setwd("/Volumes/SILVER_FAT/export_intelligence")
 
 # set work directory -
 PROJHOME <- getwd()
