@@ -42,7 +42,10 @@ fn_create_pdf_cover_page <- function(str_month_year) {
     if (file.exists("cover_page.out")) file.remove("cover_page.out")
     if (file.exists("cover_page.rnw")) file.remove("cover_page.rnw")
     
-    setwd(PROJHOME)
+    # set PROJHOME back to original
+    setwd("../..")
+    PROJHOME = getwd()
+    
     fn_message_log("cover page", "cover_page.pdf created")
 
 }
