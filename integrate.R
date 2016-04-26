@@ -28,7 +28,7 @@
 #                 limits the set of products to just Salmon and Honey.  The user can uncomment this line to run the program for
 #                 all products.
 
-# Peer review: Ilkka Havukkala 18 April: in progress
+# Peer review: Ilkka Havukkala 26 April: ok
 
 # NB  CRASHES RTudio if you try to use 32bit R in RStudion. Make sure you are
 # using 64bit R console or RStudio
@@ -69,6 +69,12 @@ PROJHOME <- getwd()
 ## functions setup
 ######
 
+# removes all files from /output/*
+source('R/utilities/fn_remove_files_from_output_dir.R')
+
+## up to here enough to rerun QC scripts at bottom
+
+
 # read in data / concordances
 source('R/fn_read_product_codes.R')
 
@@ -78,8 +84,6 @@ source('R/utilities/fn_read_unit_lookup.R')
 # cleans up the source data
 source('R/grooming/fn_country_mapping.R')
 
-# removes all files from /output/*
-source('R/utilities/fn_remove_files_from_output_dir.R')
 
 # prints a status message to the screen
 source("R/fn_message_log.R")
@@ -180,6 +184,11 @@ fn_create_pdf_compilation(glob.env$vct_pdf_names, str_file_suffix)
 
 # create .gitigores for each sub-directory in outputs/
 fn_create_git_ignores()
+
+
+# Reconciliation checks TRED vs Stat NZ csv files. To be run only when datasets are refreshed in TRED.
+# source("reconciliation/reconcile_to_tred.R")
+
 
 #########
 ### last step, make QC report, run manually when needed, 
