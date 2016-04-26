@@ -56,11 +56,15 @@ library(tidyr)
 library(tools)
 library(dplyr)
 
+# get rid of previous warning messages
+assign("last.warning", NULL, envir = baseenv())
 options(stringsAsFactors = FALSE) 
 # disable scientific notation
 options(scipen = 999)
 
 # setwd("e://eir_test")
+
+setwd("/Volumes/SILVER_FAT/export_intelligence")
 
 # set work directory -
 PROJHOME <- getwd()
@@ -71,35 +75,22 @@ PROJHOME <- getwd()
 
 # removes all files from /output/*
 source('R/utilities/fn_remove_files_from_output_dir.R')
-
-## up to here enough to rerun QC scripts at bottom
-
-
 # read in data / concordances
 source('R/fn_read_product_codes.R')
-
 # looks up units
 source('R/utilities/fn_read_unit_lookup.R')
-
 # cleans up the source data
 source('R/grooming/fn_country_mapping.R')
-
-
 # prints a status message to the screen
 source("R/fn_message_log.R")
-
 # creates a PDF file for a specific product 
 source('R/fn_wrapper_create_product_report.R')
-
 # loads and formats the data file.  Columns are renmaed to suit this code
 source('R/grooming/fn_read_data_and_convert_units.R')
-
 # this creates a cover page with a month ending title
 source('R/create_cover_page/fn_create_pdf_cover_page.R')
-
 # once we have generated the pdfs, this joins them all together
 source('R/create_pdf_compile/fn_create_pdf_compilation.R')
-
 # create .gitignores for each directory in output
 source('R/fn_create_git_ignores.R')
 
@@ -108,23 +99,22 @@ source('R/fn_create_git_ignores.R')
 # Processing starts from here
 ########
 
-
 # manual refresh retrieval of latest data from TRED, currently latest data 20151130 
 # (see explanation above at line 10)
 # source('load_from_tred.R')    # tested ok
 
 # read in data, convert the units and renname a few countries, fnctions in R/grooming folder
-df_me_exports <- fn_read_data_and_convert_units() %>% fn_country_mapping()  # tested ok
+df_me_exports <- fn_read_data_and_convert_units() %>% fn_country_mapping() 
 
 # read products and their codes, function in folder "R"
-lst_prod_codes <- fn_read_product_codes()                                   # tested ok
+lst_prod_codes <- fn_read_product_codes()                                 
 
 # exclude some products.  These have more than 1 measurement unit type
-vct_exclusions <- c("spirits", "beer", "cider_alcoholic")                   # tested ok
-lst_prod_codes <- lst_prod_codes[!names(lst_prod_codes) %in% vct_exclusions] # tested ok
+vct_exclusions <- c("spirits", "beer", "cider_alcoholic")                  
+lst_prod_codes <- lst_prod_codes[!names(lst_prod_codes) %in% vct_exclusions] 
 
 # read in a file that provides parameters associated with each type of unit
-df_unit_lookup <- fn_read_unit_lookup()                                  # tested ok
+df_unit_lookup <- fn_read_unit_lookup()                             
 
 # define some constants - these don't get changed at all.
 c_num_previous_years = 3
@@ -132,15 +122,15 @@ c_top_n_countries = 6
 
 # define some dates which are used for all reports
 # get the most recent month
-dte_end_date <- max(df_me_exports$Date)                               # tested ok
+dte_end_date <- max(df_me_exports$Date)                             
 
 # format the most recent month for display (i.e. 31.05.15 => "May -- 2015")
 str_month_end <- paste0(format(dte_end_date, "%B")," - " , 
-                        format(dte_end_date, "%Y"))                   # tested ok
+                        format(dte_end_date, "%Y"))                   
 
 # get the most recent complete year
 int_report_year <- ifelse(month(dte_end_date) == 12, 
-              year(dte_end_date), year(dte_end_date) - 1)             # tested ok
+              year(dte_end_date), year(dte_end_date) - 1)             
 
 # THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
@@ -152,7 +142,7 @@ lst_prod_codes <- lst_prod_codes[5]
 
  
 # before we start producing reports, delete all previous files (output/*)
-fn_remove_files_from_output_dir()                                     # tested ok
+fn_remove_files_from_output_dir()
 
 # create vector with global scope to store PDF file names
 glob.env <- new.env() 
@@ -163,9 +153,6 @@ glob.env$vct_disp_dates <- c(today = format(Sys.Date(), "%B %d, %Y"),
                              min = format(min(df_me_exports$Date), "%B %Y" ),
                              max = format(max(df_me_exports$Date), "%B %Y" ))
 
-
-
-#fn_wrapper_create_product_report("peas")
 
 # invisible() suppresses output from lapply
 invisible(
@@ -193,7 +180,6 @@ fn_create_git_ignores()
 # Reconciliation checks TRED vs Stat NZ csv files. To be run only when datasets are refreshed in TRED.
 # source("reconciliation/reconcile_to_tred.R")
 # source("reconciliation/reconcile_to_salmon_nov_2015.R")
-
 
 #########
 ### last step, make QC report, run manually when needed, 
