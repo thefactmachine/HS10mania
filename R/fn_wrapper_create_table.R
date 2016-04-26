@@ -32,6 +32,7 @@ fn_wrapper_create_table <- function(a_df_exports,
   source('R/create_table_format/fn_fmt_single_dec.R')
   source('R/create_table_format/fn_fmt_pc.R')
   source('R/create_table_format/fn_fmt_price.R')
+  source('R/create_table_data/fn_insert_missing_rows.R')
   
   
   # [4] Assemble various components and convert the formated data.frame into a latex tex object. 
@@ -52,6 +53,9 @@ fn_wrapper_create_table <- function(a_df_exports,
                                         a_vct_dte_params["prev_lower"], 
                                         a_vct_dte_params["prev_upper"])   
 
+  # Step 3 = The data.frame N periods previous might have missing countries.
+  # if there are missing countries, then insert some NAs
+  df_before_qvp <- fn_insert_missing_rows(df_now_qvp, df_before_qvp)
   
   # calculate compound growth (i.e carg for quanity, value, price - ie qvp) 
   df_pc_qvp <- fn_calc_pc(df_before_qvp %>% select(-Country), 

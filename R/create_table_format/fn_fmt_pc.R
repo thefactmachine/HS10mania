@@ -9,7 +9,12 @@ fn_fmt_pc <- function(x) {
   df_a <- format(round(x * 100, 2), big.mark = ',', nsmall = 2, trim = TRUE)
   # Peer review: Ilkka Havukkala 21 April 2016 OK
   # numeric gets coerced to a factor in the following
-  vct_b <- paste0(df_a[,1], "\\%")
+  
+  # format string based NA so they do NOT have a trailing % sign
+  vct_b <- ifelse(df_a[,1] == "NA", df_a[,1], paste0(df_a[,1], "\\%"))
+
+  # previous code
+  # vct_b <- paste0(df_a[,1], "\\%")
   df_a[,1] <- vct_b
   return(df_a)
 }
