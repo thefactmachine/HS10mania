@@ -1,19 +1,29 @@
+
+# PURPOSE OF THIS SCRIPT ======================
+# The purpose of this script is to check the TRED load process using Salmon product as a test case
+
+# Peer Review: Ilkka Havukkala 26 April 2016 ok, revised to grab data files from P drive
+
+
+
 rm(list = ls())
 options(stringsAsFactors = FALSE)
 library(data.table)
 library(lubridate)
 library(dplyr)
 
-setwd("/Volumes/SILVER_FAT/export_intelligence/reconciliation")
-# PURPOSE OF THIS SCRIPT ======================
+# for local use
+# setwd("/Volumes/SILVER_FAT/export_intelligence/reconciliation")
+
+
 
 
 #========= Step 1======== LOAD in Data =========
 # this loads in "Exports_By_Country"
-load("input_data/Exports_By_Country_20151130.rda")
+load("P:/OTSP/export_intelligence/inputs/Exports_By_Country_20151130.rda")
 
 # load in product codes
-df_codes <- read.csv("../inputs/concordances/product_codes.csv", 
+df_codes <- read.csv("P:/OTSP/export_intelligence/inputs/concordances/product_codes.csv", 
                  colClasses = c("character", "character"))
 
 
@@ -24,11 +34,15 @@ df_me <- Exports_By_Country[, !names(Exports_By_Country) %in% vct_cols_to_drop]
 
 names(df_me) <- c("date", "country", "HS10", "units", "value", "quantity")
 df_me$country <- as.character(df_me$country)
+
+# clean up
 rm(Exports_By_Country); rm(vct_cols_to_drop)
 
 #========= Step 2 ======== Filter for current product =========
 vct_curr_product_codes <- df_codes %>% filter(name == "salmon") %>% .$code
 df_me_c_prod <- df_me %>% filter(HS10 %in% vct_curr_product_codes)
+
+# clean up
 rm(df_me); rm(vct_curr_product_codes)
 
 #========= Step 3 ========  get date vectors =========
@@ -151,6 +165,8 @@ vct_value_all_n3 <- c(vct_value_6_n3, vct_value_other_n3, vct_value_total_n3)
 # =========================================================
 # =========================================================
 # =========================================================
+
+# clean up, release memory
 gc()
 rm(list= ls()[!(ls() %in% c('vct_top_6_country','vct_quant_all', 
                     'vct_value_all', 'vct_quant_all_n3', 'vct_value_all_n3'))])
@@ -194,7 +210,10 @@ df_complete$elasticity <- round(df_complete$elasticity, 2) %>% format(., big.mar
 
 df_complete
 
-setwd("/Volumes/SILVER_FAT/export_intelligence")
+# these numbers should be the same as in the salmon pdf top table produced by integrate.R.
+# checked manually, ok 26 April 2016 Ilkka Havukkala
+
+# setwd("/Volumes/SILVER_FAT/export_intelligence")
 
 
 

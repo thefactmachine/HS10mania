@@ -18,7 +18,7 @@
 #                 The program loops through a list of products (which are defined as groups of HS Codes) For each
 #                 product the program creates a separate PDF file. Currently there are about 22 reports (separate PDFS)
 #                 And these are stored in the /outputs/pdf directory.  After these PDFS are created, the program creates
-#                 a cover page (stored in /outputs/cover_page).  Finally, the program collages the individual product
+#                 a cover page (stored in /outputs/cover_page).  Finally, the program collates the individual product
 #                 PDFs along with the cover page and stores the result in /outputs/consolidated_pdf
 
 # Saving files:   This program DOES NOT ARCHIVE any files created by this automated process.  Once the user has created a set
@@ -145,7 +145,7 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 # THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
 # lst_prod_codes <- lst_prod_codes[c("peas")]
- lst_prod_codes <- lst_prod_codes[c("salmon")]
+# lst_prod_codes <- lst_prod_codes[c("salmon")]
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()                                     # tested ok
@@ -188,6 +188,7 @@ fn_create_git_ignores()
 
 # Reconciliation checks TRED vs Stat NZ csv files. To be run only when datasets are refreshed in TRED.
 # source("reconciliation/reconcile_to_tred.R")
+# source("reconciliation/reconcile_to_salmon_nov_2015.R")
 
 
 #########
