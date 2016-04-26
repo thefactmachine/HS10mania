@@ -31,4 +31,7 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
   )
   # call to invisible() supresses "null device...." message
   invisible(dev.off())
+  
+  # message log
+  fn_message_log(str_product,  paste0("Quantity, Value and Price Graphs - created! - saved in: ", str_path))
 }

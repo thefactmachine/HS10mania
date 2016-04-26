@@ -13,9 +13,16 @@ fn_calc_pc <- function(df_prev, df_curr, int_year_diff) {
   
   # the call to mapply applies the fn_carg function to the columns of df_prev & df_curr
   # mapply interates through columns 1 to 3
+  # mapply(function, argA, argB) ==> mapply(fnCarg, df_prev, df_curr)
+  
+  
+  # print(df_prev)
+  #p rint(df_curr)
+  
   df_pc <- mapply(function(prev, current) fn_carg(prev, current, int_year_diff), 
               df_prev, df_curr) %>% as.data.frame()
   # create some different names
   names(df_pc) <- paste0(names(df_pc),"_carg")
+
   return(df_pc)
 }

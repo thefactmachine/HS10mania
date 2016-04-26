@@ -17,7 +17,8 @@ fn_country_product_rolling_year <- function(df_data, vct_HS10, vct_countries,
   
   # the following data.frame gets re-used three times:
   df_product_year <- df_data %>% filter_(filter_lower_month) %>% 
-    filter_(filter_upper_month) %>% filter_(filter_HS10)
+    filter_(filter_upper_month) %>% filter_(filter_HS10) %>% 
+    mutate(Country = as.character(Country))
   
   # 1) to create totals for each country
   df_top_country <- df_product_year %>% filter_(filter_country) %>%
@@ -25,7 +26,7 @@ fn_country_product_rolling_year <- function(df_data, vct_HS10, vct_countries,
     # return the countries in the same other in which they were received.
     slice(match(vct_countries, Country)) %>%
     mutate_(.dots = lst_price)
-  
+
   # 2) to create a single row aggregate "other" for all other countries
   df_other <- df_product_year %>% filter_(filter_country_negation) %>%
     summarise_(.dots = lst_totals) %>% mutate_(.dots = lst_price) %>%
@@ -35,6 +36,5 @@ fn_country_product_rolling_year <- function(df_data, vct_HS10, vct_countries,
   df_total <- df_product_year %>% summarise_(.dots = lst_totals) %>% 
     mutate_(.dots = lst_price) %>% bind_cols(list(Country = "Total"), .)
   
-  return(bind_rows(df_top_country, df_other, df_total) %>% 
-           select(-Country))
+  return(bind_rows(df_top_country, df_other, df_total))
 }

@@ -23,7 +23,7 @@ fn_wrapper_compile_pdf <- function(a_str_product, a_vct_HS10_codes) {
   
   tex_path <- file.path(PROJHOME, "outputs", "latex_tex", paste0(a_str_product, ".tex"))
   write(tex_string, tex_path)
-  fn_message_log(a_str_product, "base text file - created (outputs/latex_tex)")
+  fn_message_log(a_str_product, "base Latex tex file - created (outputs/latex_tex)")
   
   # [2] create knitr file: read in the tex and then convert the sucker and save it
   str_knitr_file_name <- paste0(a_str_product, ".rnw")
@@ -41,7 +41,6 @@ fn_wrapper_compile_pdf <- function(a_str_product, a_vct_HS10_codes) {
   
   
   # invisible = suppresses output messages
-  
   invisible(
     knit2pdf(input = str_knitr_file_name,
              compiler = 'xelatex', 

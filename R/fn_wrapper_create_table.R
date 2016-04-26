@@ -51,16 +51,21 @@ fn_wrapper_create_table <- function(a_df_exports,
                                         a_vct_top_country, 
                                         a_vct_dte_params["prev_lower"], 
                                         a_vct_dte_params["prev_upper"])   
+
   
   # calculate compound growth (i.e carg for quanity, value, price - ie qvp) 
-  df_pc_qvp <- fn_calc_pc(df_before_qvp, df_now_qvp, a_int_n_prev_year) 
-
+  df_pc_qvp <- fn_calc_pc(df_before_qvp %>% select(-Country), 
+                          df_now_qvp %>% select(-Country), 
+                          a_int_n_prev_year) 
+  
+  
   # add an elasticity column 
   df_pc_qvpe <- df_pc_qvp %>% mutate(elasticity = quantity_carg / price_carg)
  
   # combine quanity, value and price (df_now_qvp) with their associated percentages (df_pc_qvp)
   # df_now_qvp = 8 x 3; df_pc_qvpe = 8 x 4. Resul of bind_cols = 8 x 7
-  df_now_comp <- bind_cols(df_now_qvp, df_pc_qvpe)
+  df_now_comp <- bind_cols(df_now_qvp %>% select(-Country), 
+                           df_pc_qvpe)
   
   
   # Step 3 - format the raw values

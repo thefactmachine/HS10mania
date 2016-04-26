@@ -38,4 +38,8 @@ fn_create_graph_smoothed_price <- function(df_data, str_dir, str_product, a_int_
   )
   # call to invisible() supresses "null device...." message
   invisible(dev.off())
+  
+  # message log
+  fn_message_log(str_product,  paste0("Smoothed Monthly Price Graph - created! - saved in: ", str_path))
+  
 }

@@ -6,6 +6,8 @@ fn_create_monthly_price <- function(df_data, vct_top_country) {
   
   source('R/create_graphs/legacy_function_remove_outliers.R')
   
+  fn_message_log(a_str_message = "creating data frame for smoothed price graph (step 2) - top n countries") 
+  
   # 1. create monthly prices for top n countries (vct_top_country)
   filter_country <- interp(quote(x %in% y), x=as.name("country"), y = vct_top_country)
   df_detail <- df_data %>% filter_(filter_country) %>%

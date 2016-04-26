@@ -10,6 +10,8 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
   # str__graph_type: is either "value" , "volume" "count"
   # str_unit: this is the type of units. This is used for the volume graph.
 
+  
+  
   # better check that a correct parameter was passed correctly. If not fail elegantly
   bln_correct_graph_type <-any(str_graph_type == "volume", 
                       str_graph_type ==  "value", str_graph_type ==  "count")
@@ -48,7 +50,9 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
            str_sm_line_col <- mbie.cols(3)
          }
   )
+  
   # in the switch statement above, we have assigned the column "measure" the relevant column
+  
   # so we just need to keep the date and measure columns
   df_data <- df_data %>% select(date, measure)
   
@@ -57,6 +61,7 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
   str_path <- paste0(str_dir_pfx, "/", str_dir_sfx, '/', 
                      tolower(str_product),  "_monthly_", str_graph_type, ".pdf") 
   
+
   # create the graph title
   str_title <- paste0(str_prod_title_display," - ", str_title_stub, " (year ending ", str_title_yr_end, ")")
   
@@ -77,4 +82,8 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
   )
   # call to invisible() supresses "null device...." message
   invisible(dev.off())
+  
+  # message log
+  fn_message_log(str_product,  paste0(str_title_stub, " - created! - saved in: ", str_path))
+  
 }

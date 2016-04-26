@@ -36,6 +36,8 @@
 
 ### clear working space
 rm(list = ls())
+# reset warnings.
+assign("last.warning", NULL, envir = baseenv())
 
 
 ## PPL using MAC, outside of MBIE envirnment does not need to run it.
@@ -142,7 +144,10 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 # THIS IS TESTING STUFF
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
 # lst_prod_codes <- lst_prod_codes[c("peas")]
- lst_prod_codes <- lst_prod_codes[c("salmon")]
+# lst_prod_codes <- lst_prod_codes[c("salmon")]
+
+lst_prod_codes <- lst_prod_codes[5]
+
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()                                     # tested ok
@@ -156,12 +161,8 @@ glob.env$vct_disp_dates <- c(today = format(Sys.Date(), "%B %d, %Y"),
                              min = format(min(df_me_exports$Date), "%B %Y" ),
                              max = format(max(df_me_exports$Date), "%B %Y" ))
 
-
-
-#fn_wrapper_create_product_report("peas")
-
 # invisible() suppresses output from lapply
-invisible(
+# invisible(
   # cycle through the list of product codes; create a report for each
   lapply(seq_along(lst_prod_codes), function(i) {
           # get the current product name; i is the ith element of lst_prod_codes
@@ -170,7 +171,7 @@ invisible(
           fn_wrapper_create_product_report(str_prod_name)
         } # end of: anonomymous function
       ) # end of: lapply
-  ) # end of: invisible
+#  ) # end of: invisible
 
 # create the cover page
 invisible(fn_create_pdf_cover_page(str_month_end))
@@ -189,4 +190,4 @@ fn_create_git_ignores()
 
 # source("R/QC/checks_QC.r")
 # source("R/QC/generate_QC_report_to_manager.R")
-
+ 

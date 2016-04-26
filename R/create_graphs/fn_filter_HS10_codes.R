@@ -3,6 +3,8 @@ fn_filter_HS10_codes <- function(df_data, vct_HS10) {
   # Filters in only vct_HS10 codes.
   # Peer review: Ilkka Havukkala 21 April 2016 OK
   
+  fn_message_log(a_str_message = "creating data frame for smoothed price graph (step 1) - relevant HS10 codes") 
+  
   # set up things so that this function can be parameterised with a filter of HS10 codes
   filter_HS10 <- interp(quote(x %in% y), x=as.name("Harmonised_System_Code"), y = vct_HS10)
   

@@ -9,9 +9,12 @@ fn_create_tex_file <- function(str_current_product, a_vct_HS10_codes) {
   # R functionality
   # Peer review: Ilkka Havukkala 21 April 2016 OK
   
+  fn_message_log(a_str_message = "about to create Latex tex file") 
+  
   # re-format the product name for the title
   source('R/utilities/fn_create_display_title.R')
   str_product_title <- fn_create_display_title(str_current_product)
+
   
   # we have a list of 10 digit HS10 codes. We extract the first
   # six digits and then make them unique. The resultant 6 digit 

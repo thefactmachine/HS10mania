@@ -29,7 +29,5 @@ fn_create_yearly_summary <- function(df_data, a_int_report_year) {
                              ordered = TRUE)
   
   return(as.data.frame(df_return))
-  
-  
-  
+ 
 }
