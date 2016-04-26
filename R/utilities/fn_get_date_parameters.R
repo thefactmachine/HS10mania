@@ -8,6 +8,8 @@ fn_get_date_parameters <- function(vct_dates, int_n_years_prev) {
   # date which is 12 periods (ie. months) previous. This returns
   # a pair of dates. So..in total there are 2 x pairs of dates returned
  
+  fn_message_log(a_str_message = paste0("Creating date pairs for most recent 12 months and ", int_n_years_prev, " years previous"))
+  
   fn_last_day_of_month <- function(dte_param) {
     # get the first day of the month for the input date (2012-11-23 ==> 2012-11-01)
     dte_first_day <- ymd(paste0(year(dte_param),"-", month(dte_param), "-", "01"))

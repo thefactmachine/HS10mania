@@ -78,6 +78,7 @@ fn_wrapper_create_table <- function(a_df_exports,
   # print(df_now_comp)
   
   # assign("test_df", df_now_comp, envir=globalenv())
+  fn_message_log(a_str_product_name, "calling formating functions in R/create_table_format")
   
   df_now_comp_fmt <-  do.call(cbind, 
                              lapply(seq_along(df_now_comp), 
@@ -85,9 +86,7 @@ fn_wrapper_create_table <- function(a_df_exports,
                              ) #lapply
                       ) # do.call
   
-  fn_message_log(a_str_product_name, "table data - created (not saved to disk)")
-  
-
+ 
   # Step 4 - Assemble the various components and create a latex tex file
   # create a data.frame of row names for the final table
   df_row_names <- data.frame(Country = c(a_vct_top_country, "Other", "Total"))
@@ -101,6 +100,7 @@ fn_wrapper_create_table <- function(a_df_exports,
                       quantity_units = a_str_quantity_units)
   
   # create the latex tex object
+  fn_message_log(a_str_product_name, "about to call fn_wrapper_create_latex_table(...)")
   str_tex <- fn_wrapper_create_latex_table(df_final_table, 
                                            vct_tbl_params, 
                                            dte_end_period = a_vct_dte_params["curr_upper"])
@@ -113,6 +113,6 @@ fn_wrapper_create_table <- function(a_df_exports,
   # finally..!!!  save the file
   writeLines(str_tex,  tex_path)
   
-  fn_message_log(a_str_product_name, "tex data for table created - (outputs/latex_table)")
+  fn_message_log(a_str_product_name, "tex data for table had finally been created - (outputs/latex_table) - leaving fn_wrapper_create_table(...)")
   
 }

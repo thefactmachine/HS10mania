@@ -83,6 +83,7 @@ fn_wrapper_create_product_report <- function(a_str_product) {
                    str_vol_units_y_axis = df_unit_params$val_y_axis)
   
   # create all five graphs
+  fn_message_log(a_str_product, a_str_message = "about to call fn_wrapper_create_all_graphs(...)")
   fn_wrapper_create_all_graphs(df_me_exports, vct_HS10_codes, vct_top_country, lst_args)
   
   # [5] Create the pdf report

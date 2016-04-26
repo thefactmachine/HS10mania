@@ -30,7 +30,7 @@
 
 # Peer review: Ilkka Havukkala 26 April: ok
 
-# NB  CRASHES RTudio if you try to use 32bit R in RStudion. Make sure you are
+# NB  CRASHES RTudio if you try to use 32bit R in RStudio. Make sure you are
 # using 64bit R console or RStudio
 
 
@@ -197,4 +197,3 @@ fn_create_git_ignores()
 
 # source("R/QC/checks_QC.r")
 # source("R/QC/generate_QC_report_to_manager.R")
-

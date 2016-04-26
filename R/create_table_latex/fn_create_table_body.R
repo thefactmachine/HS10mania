@@ -3,7 +3,9 @@ fn_create_table_body <- function(df) {
   # except for the last column where two \\ are inserted
   # return a vector of concatenated columns
   # Peer review: Ilkka Havukkala 21 April 2016 OK
-    
+  
+  fn_message_log(a_str_message = "creating body of table for tex table")  
+  
   df_less1 <- df %>% select(-ncol(.))
   df_a <-lapply(seq_len(nrow(df_less1)), function(x) {
     as.vector(df_less1[x,]) %>% 

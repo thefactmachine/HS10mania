@@ -3,7 +3,6 @@ fn_fmt_price <-function(x) {
   # example 11.222 becomes "$11.2"
   # Peer review: Ilkka Havukkala 21 April 2016 OK
   
-  
   # x comes as a df and paste0() returns a vector.  We want the
   # function to return a data frame with the incoming column name preserved.
   # therefore the following trickery is used to preserve our data.frame. 
