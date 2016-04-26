@@ -146,10 +146,10 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
 # lst_prod_codes <- lst_prod_codes[c("peas")]
 # lst_prod_codes <- lst_prod_codes[c("salmon")]
-<<<<<<< HEAD
+
 lst_prod_codes <- lst_prod_codes[5]
-=======
->>>>>>> 1a32e79ab128ce1a3c7f7ac083891cd41d2ce878
+
+
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()                                     # tested ok
