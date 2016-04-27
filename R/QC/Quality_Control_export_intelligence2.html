@@ -69,7 +69,7 @@ img {
 <p>Peer review of this file: to do</p>
 <p>The latest run and git merged version of this document is available at <a href="file:///P:/OTSP/export_intelligence/R/QC/Quality_Control_export_intelligence2.html">master repo</a></p>
 <pre class="r"><code>QC_rundate  # when R/QC/checks_QC.r was last run</code></pre>
-<pre><code>## [1] &quot;Tue Apr 26 12:37:20 2016&quot;</code></pre>
+<pre><code>## [1] &quot;Wed Apr 27 16:15:46 2016&quot;</code></pre>
 <p>The QC checks that PDF reports data corresponds to the TRED data and the Stat NZ data. Cross-checks also to UN comtrade website, e.g. [<a href="http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&amp;cc=030211" class="uri">http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&amp;cc=030211</a>]</p>
 <p>NB IMPORTANT TO ENSURE THAT ALL SCRIPTS HAVE BEEN REVIEWED.</p>
 <p>Please <strong>Agree</strong> or <strong>Disagree</strong> that the QC is adequate, and thereby <strong>Grant</strong> or <strong>Deny</strong> permission to release the data for MBIE and/or public consumption.</p>
@@ -99,7 +99,7 @@ img {
 ##  [21] &quot;./R/create_graphs/fn_monthly_summary.R&quot;                                                                             
 ##  [22] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
 ##  [23] &quot;./R/create_graphs/legacy_function_remove_outliers.R&quot;                                                                
-##  [24] &quot;     # Peer review: Ilkka Havukkala 21 April 2016 not used in integrate.r, so not evaluated&quot;                        
+##  [24] &quot;     # Peer review: Ilkka Havukkala 21 April 2016 runs ok, but could be doucmented/reviewed for rationale&quot;          
 ##  [25] &quot;./R/create_pdf/fn_create_tex_file.R&quot;                                                                                
 ##  [26] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
 ##  [27] &quot;./R/create_pdf/fn_get_unique_HS10_stubs.R&quot;                                                                          
@@ -112,77 +112,79 @@ img {
 ##  [34] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
 ##  [35] &quot;./R/create_table_data/fn_country_product_rolling_year.R&quot;                                                            
 ##  [36] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [37] &quot;./R/create_table_format/fn_fmt_kilo_to_tonne.R&quot;                                                                     
-##  [38] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [39] &quot;./R/create_table_format/fn_fmt_millions.R&quot;                                                                          
-##  [40] &quot;      # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                              
-##  [41] &quot;./R/create_table_format/fn_fmt_pc.R&quot;                                                                                
-##  [42] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [43] &quot;./R/create_table_format/fn_fmt_price.R&quot;                                                                             
+##  [37] &quot;./R/create_table_data/fn_insert_missing_rows.R&quot;                                                                     
+##  [38] &quot;       ## Peer review: Ilkka Havukkala 27 April 2016 ok&quot;                                                            
+##  [39] &quot;./R/create_table_format/fn_fmt_kilo_to_tonne.R&quot;                                                                     
+##  [40] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
+##  [41] &quot;./R/create_table_format/fn_fmt_millions.R&quot;                                                                          
+##  [42] &quot;      # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                              
+##  [43] &quot;./R/create_table_format/fn_fmt_pc.R&quot;                                                                                
 ##  [44] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [45] &quot;./R/create_table_format/fn_fmt_single_dec.R&quot;                                                                        
+##  [45] &quot;./R/create_table_format/fn_fmt_price.R&quot;                                                                             
 ##  [46] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [47] &quot;./R/create_table_latex/fn_create_table_body.R&quot;                                                                      
+##  [47] &quot;./R/create_table_format/fn_fmt_single_dec.R&quot;                                                                        
 ##  [48] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [49] &quot;./R/create_table_latex/fn_create_table_caption.R&quot;                                                                   
+##  [49] &quot;./R/create_table_latex/fn_create_table_body.R&quot;                                                                      
 ##  [50] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [51] &quot;./R/create_table_latex/fn_create_table_columns.R&quot;                                                                   
+##  [51] &quot;./R/create_table_latex/fn_create_table_caption.R&quot;                                                                   
 ##  [52] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [53] &quot;./R/create_table_latex/fn_create_table_dimensions.R&quot;                                                                
+##  [53] &quot;./R/create_table_latex/fn_create_table_columns.R&quot;                                                                   
 ##  [54] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [55] &quot;./R/create_table_latex/fn_wrapper_create_latex_table.R&quot;                                                             
+##  [55] &quot;./R/create_table_latex/fn_create_table_dimensions.R&quot;                                                                
 ##  [56] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [57] &quot;./R/fn_create_git_ignores.R&quot;                                                                                        
-##  [58] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK, add explanation why this is needed&quot;                         
-##  [59] &quot;./R/fn_message_log.R&quot;                                                                                               
-##  [60] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [61] &quot;./R/fn_read_product_codes.R&quot;                                                                                        
+##  [57] &quot;./R/create_table_latex/fn_wrapper_create_latex_table.R&quot;                                                             
+##  [58] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
+##  [59] &quot;./R/fn_create_git_ignores.R&quot;                                                                                        
+##  [60] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK, add explanation why this is needed&quot;                         
+##  [61] &quot;./R/fn_message_log.R&quot;                                                                                               
 ##  [62] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [63] &quot;./R/fn_top_n_countries_rolling.R&quot;                                                                                   
+##  [63] &quot;./R/fn_read_product_codes.R&quot;                                                                                        
 ##  [64] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [65] &quot;./R/fn_wrapper_compile_pdf.R&quot;                                                                                       
+##  [65] &quot;./R/fn_top_n_countries_rolling.R&quot;                                                                                   
 ##  [66] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [67] &quot;./R/fn_wrapper_create_all_graphs.R&quot;                                                                                 
+##  [67] &quot;./R/fn_wrapper_compile_pdf.R&quot;                                                                                       
 ##  [68] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [69] &quot;./R/fn_wrapper_create_product_report.R&quot;                                                                             
+##  [69] &quot;./R/fn_wrapper_create_all_graphs.R&quot;                                                                                 
 ##  [70] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [71] &quot;./R/fn_wrapper_create_table.R&quot;                                                                                      
+##  [71] &quot;./R/fn_wrapper_create_product_report.R&quot;                                                                             
 ##  [72] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [73] &quot;./R/grooming/fn_country_mapping.R&quot;                                                                                  
+##  [73] &quot;./R/fn_wrapper_create_table.R&quot;                                                                                      
 ##  [74] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [75] &quot;./R/grooming/fn_get_distinct_units.R&quot;                                                                               
+##  [75] &quot;./R/grooming/fn_country_mapping.R&quot;                                                                                  
 ##  [76] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [77] &quot;./R/grooming/fn_read_data_and_convert_units.R&quot;                                                                      
-##  [78] &quot;         ## Peer review: Ilkka Havukkala 18 April 2016 ok&quot;                                                          
-##  [79] &quot;./R/QC/checks_QC.r&quot;                                                                                                 
-##  [80] &quot;        # Peer review: &quot;                                                                                            
-##  [81] &quot;           hits &lt;- grep(\&quot;Peer review\&quot;, ignore.case = TRUE, value = TRUE, x) &quot;                                     
-##  [82] &quot;./R/QC/generate_QC_report_to_manager.R&quot;                                                                             
-##  [83] &quot;     ##  Peer reviewed by : &quot;                                                                                       
-##  [84] &quot;./R/QC/Quality_Control_export_intelligence.Rmd&quot;                                                                     
-##  [85] &quot;     Peer review of this file: to do&quot;                                                                               
-##  [86] &quot;./R/QC/Quality_Control_export_intelligence2.Rmd&quot;                                                                    
+##  [77] &quot;./R/grooming/fn_get_distinct_units.R&quot;                                                                               
+##  [78] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
+##  [79] &quot;./R/grooming/fn_read_data_and_convert_units.R&quot;                                                                      
+##  [80] &quot;         ## Peer review: Ilkka Havukkala 18 April 2016 ok&quot;                                                          
+##  [81] &quot;./R/QC/checks_QC.r&quot;                                                                                                 
+##  [82] &quot;        # Peer review: &quot;                                                                                            
+##  [83] &quot;           hits &lt;- grep(\&quot;Peer review\&quot;, ignore.case = TRUE, value = TRUE, x) &quot;                                     
+##  [84] &quot;./R/QC/generate_QC_report_to_manager.R&quot;                                                                             
+##  [85] &quot;     ##  Peer reviewed by : &quot;                                                                                       
+##  [86] &quot;./R/QC/Quality_Control_export_intelligence.Rmd&quot;                                                                     
 ##  [87] &quot;     Peer review of this file: to do&quot;                                                                               
-##  [88] &quot;./R/utilities/fn_create_display_title.R&quot;                                                                            
-##  [89] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [90] &quot;./R/utilities/fn_get_date_parameters.R&quot;                                                                             
+##  [88] &quot;./R/QC/Quality_Control_export_intelligence2.Rmd&quot;                                                                    
+##  [89] &quot;     Peer review of this file: to do&quot;                                                                               
+##  [90] &quot;./R/utilities/fn_create_display_title.R&quot;                                                                            
 ##  [91] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [92] &quot;./R/utilities/fn_get_unit_parameters.R&quot;                                                                             
+##  [92] &quot;./R/utilities/fn_get_date_parameters.R&quot;                                                                             
 ##  [93] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [94] &quot;./R/utilities/fn_read_unit_lookup.R&quot;                                                                                
+##  [94] &quot;./R/utilities/fn_get_unit_parameters.R&quot;                                                                             
 ##  [95] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [96] &quot;./R/utilities/fn_remove_files_from_output_dir.R&quot;                                                                    
+##  [96] &quot;./R/utilities/fn_read_unit_lookup.R&quot;                                                                                
 ##  [97] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
-##  [98] &quot;./reconciliation/reconcile_to_salmon_nov_2015.R&quot;                                                                    
-##  [99] &quot;     Missing Peer_review line to add&quot;                                                                               
-## [100] &quot;./reconciliation/reconcile_to_tred.R&quot;                                                                               
-## [101] &quot;     # Peer review: Ilkka Havukkala 26 April 2016 OK, added P drive grabbing of original data files, lines 30, 225 &quot;</code></pre>
+##  [98] &quot;./R/utilities/fn_remove_files_from_output_dir.R&quot;                                                                    
+##  [99] &quot;       # Peer review: Ilkka Havukkala 21 April 2016 OK&quot;                                                             
+## [100] &quot;./reconciliation/reconcile_to_salmon_nov_2015.R&quot;                                                                    
+## [101] &quot;     # Peer Review: Ilkka Havukkala 26 April 2016 ok, revised to grab data files from P drive&quot;                      
+## [102] &quot;./reconciliation/reconcile_to_tred.R&quot;                                                                               
+## [103] &quot;     # Peer review: Ilkka Havukkala 26 April 2016 OK, added P drive grabbing of original data files, lines 30, 225 &quot;</code></pre>
 </div>
 <div id="comments" class="section level1">
 <h1>Comments</h1>
 <div id="scope-of-each-commodity-summary-page" class="section level2">
 <h2>Scope of each commodity summary page</h2>
-<p>The inputs/concordances/product_codes.csv file has the exact full codes used to make each summary report for Salmon, Chicken, Onions. NB some codes have 9 numbers, maybe leading zero missing, need to check carefully data matching.</p>
+<p>The inputs/concordances/product_codes.csv file has the exact full codes used to make each summary report for Salmon, Chicken, Onions.</p>
 <p>inputs/concordances/readme.txt file states this list prepared by Andrew McCullum, but the process not detailed.</p>
 <p>E.g. for Salmon, browsing at UN comtrade website [<a href="http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&amp;cc=0302" class="uri">http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&amp;cc=0302</a>]</p>
 <p>one can also find</p>
@@ -191,28 +193,52 @@ img {
 <p>030219 Name: Salmonidae, not trout or salmon,fresh or chilled whole Description: Salmonidae,</p>
 <p>has been included in the product_codes.csv file, so the rationale of selection is not clear.</p>
 <p>Same comment applies to the other commodities (not checked).</p>
-<p>Also, not clear what code standard used. UN comtrade website has HS code revisions from 96 to 12 and SITC Rev.1 to Rev.4. Link to code extracting this data from Stat NZ would be useful, as well as an URL to similar tables on STAT nz website.</p>
+</div>
+<div id="code-standard" class="section level2">
+<h2>Code standard</h2>
+<p>Also, not clear what code standard used. UN comtrade website has HS code revisions from 96 to 12 and SITC Rev.1 to Rev.4.</p>
+<p>Link to code extracting this data from Stat NZ would be useful, as well as an URL to similar tables on STAT nz website.</p>
+<p>Mark Hatcher indicated that the HS10 descriptions that we have from Stats NZ are not perfect and may change over time. The HS10 descriptions corresponding to the number codes could be downloaded/subscribed to TRED (see <a href="http://unstats.un.org/unsd/tradekb/Knowledgebase/Harmonized-Commodity-Description-and-Coding-Systems-HS" class="uri">http://unstats.un.org/unsd/tradekb/Knowledgebase/Harmonized-Commodity-Description-and-Coding-Systems-HS</a> ).</p>
+<p>Correspondence codes between SITC and HS codes are available: <a href="http://unstats.un.org/unsd/trade/conversions/HS%20Correlation%20and%20Conversion%20tables.htm">http://unstats.un.org/unsd/trade/conversions/HS%20Correlation%20and%20Conversion%20tables.htm</a></p>
+</div>
+<div id="smoothed-price-graph" class="section level2">
+<h2>Smoothed price graph</h2>
+<p>The smooth price graphâ€™s scale could be improved (eg Y axis scaled to maximum of smoothed curve, not underlying original data points).</p>
+<p>Warnings when generating the smoothed price graph Generating the smooth price graphs can produce a number of warnings are some countries may be missing data for certain time periods. Ideally, the program should respond to this more gracefully.</p>
+</div>
+<div id="outliers" class="section level2">
+<h2>Outliers</h2>
+<p>The function â€œremove_outliersâ€ defined in â€œR/create_graphs/legacy_function_remove_outliers.Râ€ was inherited from George Fan’s original code. The rational of using this outlier method (based on interquartile ranges) should be stated explicitly, and why outlier filtering is needed.</p>
 </div>
 </div>
 <div id="basic-checks" class="section level1">
 <h1>Basic checks</h1>
-<div id="number-of-observations-and-variables-or-the-like" class="section level2">
-<h2>number of observations and variables or the like</h2>
-<p>TO UPDATE</p>
-<pre class="r"><code>str(final)</code></pre>
-<pre><code>##  chr [1:101] &quot;./integrate.R&quot; ...</code></pre>
-</div>
-<div id="suggestions" class="section level2">
-<h2>Suggestions</h2>
-<p>1 Formalise the generation of commodity code lists and their pooling for one commodity name</p>
-<p>2 Modify code to work recursively to include all subcategories of desired scope, e.g. all fish related commodities under</p>
-<p>0302 Name: Fish, fresh or chilled, whole<br />or<br />0302 Name: Fish, fresh or chilled, whole</p>
-<p>Also, import the UN comtrad Name into the dataset for displaying automatically in titles.</p>
+<div id="number-of-observations-and-values" class="section level2">
+<h2>Number of observations and values</h2>
+<p>Reconciliation scripts checked that results from TRED and those derived from original Stat NZ .csv files are identical.</p>
 </div>
 </div>
-<div id="test-plots" class="section level1">
-<h1>Test plots</h1>
-<p>image links here if needed, additionally plotted from Stat NZ and/or UN ComTrade for comparison</p>
+<div id="suggestions" class="section level1">
+<h1>Suggestions</h1>
+<ol style="list-style-type: decimal">
+<li><p>Formalise the generation of commodity code lists and their pooling for one commodity name, e.g. include the UN ComTrade commodity names and descriptions for analysis</p></li>
+<li><p>Modify code to work recursively to include all subcategories of desired scope, e.g. all fish related commodities under:</p></li>
+</ol>
+<p>0302 Name: Fish, fresh or chilled, whole</p>
+<ol start="3" style="list-style-type: decimal">
+<li>consolidate the version of codes being used (HS 2007 version?)</li>
+</ol>
+</div>
+<div id="test-runs" class="section level1">
+<h1>Test runs</h1>
+<p>Code was run repeatedly with the selected commodity codes (salmon, etc) and results consistent with reconciliation checks. Missing data from earlier years now correctly displayed as NAs in CAGR columns in the pdf summary table.</p>
+</div>
+<div id="example-report-for-salmon" class="section level1">
+<h1>Example report for Salmon</h1>
+<p><a href="file:///P:/OTSP/export_intelligence/outputs/pdf/salmon_20160426.pdf">Salmon report</a></p>
+</div>
+<div id="plots-if-any-png-files" class="section level1">
+<h1>Plots (if any png files)</h1>
 <p>****************************************************<br>No PNG plots in this repository currently</p>
 </div>
 

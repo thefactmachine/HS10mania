@@ -35,7 +35,7 @@ final
 
 ## Scope of each commodity summary page
 
-The inputs/concordances/product_codes.csv file has the exact full codes used to make each summary report for Salmon, Chicken, Onions. NB some codes have 9 numbers, maybe leading zero missing, need to check carefully data matching.
+The inputs/concordances/product_codes.csv file has the exact full codes used to make each summary report for Salmon, Chicken, Onions.
 
 inputs/concordances/readme.txt file states this list prepared by Andrew McCullum, but the process not detailed.
 
@@ -56,39 +56,62 @@ has been included in the product_codes.csv file, so the rationale of selection i
 
 Same comment applies to the other commodities (not checked).
 
+## Code standard
+
 Also, not clear what code standard used. UN comtrade website has HS code revisions from 96 to 12 and SITC Rev.1 to Rev.4.
+
 Link to code extracting this data from Stat NZ would be useful, as well as an URL to similar tables on STAT nz website.
+
+Mark Hatcher indicated that the HS10 descriptions that we have from Stats NZ are not perfect and may change over time.  The HS10 descriptions corresponding to the number codes could be downloaded/subscribed to TRED (see http://unstats.un.org/unsd/tradekb/Knowledgebase/Harmonized-Commodity-Description-and-Coding-Systems-HS ). 
+
+Correspondence codes between SITC and HS codes are available:
+http://unstats.un.org/unsd/trade/conversions/HS%20Correlation%20and%20Conversion%20tables.htm
+
+
+## Smoothed price graph
+
+The smooth price graph’s scale could be improved (eg Y axis scaled to maximum of smoothed curve, not underlying original data points).
+
+Warnings when generating the smoothed price graph
+Generating the smooth price graphs can produce a number of warnings are some countries may be missing data for certain time periods.  Ideally, the program should respond to this more gracefully.
+
+## Outliers
+
+The function “remove_outliers”  defined in “R/create_graphs/legacy_function_remove_outliers.R” was inherited from George Fan's original code. The rational of using this outlier method (based on interquartile ranges) should be stated explicitly, and why outlier filtering is needed.
 
 
 
 
 # Basic checks 
 
-## number of observations and variables or the like
+## Number of observations and values
 
-TO UPDATE
+Reconciliation scripts checked that results from TRED and those derived from original Stat NZ .csv files are identical.
 
-```{r}
-str(final)
-```
 
-## Suggestions
+# Suggestions
 
-1 Formalise the generation of commodity code lists and their pooling for one commodity name  
+1) Formalise the generation of commodity code lists and their pooling for one commodity name, e.g. include the UN ComTrade commodity names and descriptions for analysis   
 
-2 Modify code to work recursively to include all subcategories of desired scope, e.g.
-all fish related commodities under   
+2) Modify code to work recursively to include all subcategories of desired scope, e.g.
+all fish related commodities under:   
 
 0302  Name: Fish, fresh or chilled, whole  
-or  
-0302  Name: Fish, fresh or chilled, whole
 
-Also, import the UN comtrad Name into the dataset for displaying automatically in titles.  
-
-# Test plots 
+3) consolidate the version of codes being used (HS 2007 version?)
 
 
-image links here if needed, 
-additionally plotted from Stat NZ and/or UN ComTrade for comparison
+# Test runs
+
+Code was run repeatedly with the selected commodity codes (salmon, etc) and results consistent with reconciliation checks. Missing data from earlier years now correctly displayed as NAs in CAGR columns in the pdf summary table. 
+
+# Example report for Salmon
+
+[Salmon report](file:///P:/OTSP/export_intelligence/outputs/pdf/salmon_20160426.pdf)  
+
+
+# Plots (if any png files)
+
+
 
 

@@ -93,3 +93,123 @@ additionally plotted from Stat NZ and/or UN ComTrade for comparison
 
 
 ****************************************************<br>No PNG plots in this repository currently  
+=======
+---
+title: "Quality Control Report: export intelligence reports of Mark Hatcher"
+author: "Ilkka Havukkala"
+
+output: html_document
+runtime: shiny
+---
+
+Peer review of this file: to do
+
+The latest run and git merged version of this document is available at
+[master repo](file:///P:/OTSP/export_intelligence/R/QC/Quality_Control_export_intelligence2.html) 
+
+
+
+```{r}
+QC_rundate  # when R/QC/checks_QC.r was last run
+```
+
+The QC checks that PDF reports data corresponds to the TRED data and the Stat NZ data. Cross-checks also to UN comtrade website, e.g. 
+[http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&cc=030211]
+
+NB IMPORTANT TO ENSURE THAT ALL SCRIPTS HAVE BEEN REVIEWED.
+
+Please **Agree** or **Disagree** that the QC is adequate, and thereby **Grant** or **Deny** permission to release the data for MBIE and/or public consumption. 
+
+
+# Peer_reviews
+
+```{r}
+final
+```
+
+# Comments 
+
+## Scope of each commodity summary page
+
+The inputs/concordances/product_codes.csv file has the exact full codes used to make each summary report for Salmon, Chicken, Onions.
+
+inputs/concordances/readme.txt file states this list prepared by Andrew McCullum, but the process not detailed.
+
+E.g. for Salmon, browsing at UN comtrade website 
+[http://comtrade.un.org/db/mr/rfCommoditiesList.aspx?px=H1&cc=0302]
+
+one can also find 
+
+030211  Name: Trout, fresh or chilled, whole 
+Description: Salmonidae
+
+which is not included, although 
+
+030219  Name: Salmonidae, not trout or salmon,fresh or chilled whole
+Description: Salmonidae,
+
+has been included in the product_codes.csv file, so the rationale of selection is not clear.
+
+Same comment applies to the other commodities (not checked).
+
+## Code standard
+
+Also, not clear what code standard used. UN comtrade website has HS code revisions from 96 to 12 and SITC Rev.1 to Rev.4.
+
+Link to code extracting this data from Stat NZ would be useful, as well as an URL to similar tables on STAT nz website.
+
+Mark Hatcher indicated that the HS10 descriptions that we have from Stats NZ are not perfect and may change over time.  The HS10 descriptions corresponding to the number codes could be downloaded/subscribed to TRED (see http://unstats.un.org/unsd/tradekb/Knowledgebase/Harmonized-Commodity-Description-and-Coding-Systems-HS ). 
+
+Correspondence codes between SITC and HS codes are available:
+http://unstats.un.org/unsd/trade/conversions/HS%20Correlation%20and%20Conversion%20tables.htm
+
+
+## Smoothed price graph
+
+The smooth price graph’s scale could be improved (eg Y axis scaled to maximum of smoothed curve, not underlying original data points).
+
+Warnings when generating the smoothed price graph
+Generating the smooth price graphs can produce a number of warnings are some countries may be missing data for certain time periods.  Ideally, the program should respond to this more gracefully.
+
+## Outliers
+
+The function “remove_outliers”  defined in “R/create_graphs/legacy_function_remove_outliers.R” was inherited from George Fan's original code. The rational of using this outlier method (based on interquartile ranges) should be stated explicitly, and why outlier filtering is needed.
+
+
+
+
+# Basic checks 
+
+## Number of observations and values
+
+Reconciliation scripts checked that results from TRED and those derived from original Stat NZ .csv files are identical.
+
+
+# Suggestions
+
+1) Formalise the generation of commodity code lists and their pooling for one commodity name, e.g. include the UN ComTrade commodity names and descriptions for analysis   
+
+2) Modify code to work recursively to include all subcategories of desired scope, e.g.
+all fish related commodities under:   
+
+0302  Name: Fish, fresh or chilled, whole  
+
+3) consolidate the version of codes being used (HS 2007 version?)
+
+
+# Test runs
+
+Code was run repeatedly with the selected commodity codes (salmon, etc) and results consistent with reconciliation checks. Missing data from earlier years now correctly displayed as NAs in CAGR columns in the pdf summary table. 
+
+# Example report for Salmon
+
+[Salmon report](file:///P:/OTSP/export_intelligence/outputs/pdf/salmon_20160426.pdf)  
+
+
+# Plots (if any png files)
+
+
+
+
+****************************************************<br>No PNG plots in this repository currently  
+

@@ -30,10 +30,11 @@
    
    colnames(allfiles) <- "myfile"
    
-   # remove .Rproj link adn rda files
+   # remove .Rproj link and rda, rnw files
    allfiles <- allfiles %>% 
      filter(!grepl('\\.Rproj', myfile) ) %>%
-     filter(!grepl('\\.rda', myfile) ) 
+     filter(!grepl('\\.rda', myfile) ) %>%
+     filter(!grepl('\\.rnw', myfile) )
      
    
    
