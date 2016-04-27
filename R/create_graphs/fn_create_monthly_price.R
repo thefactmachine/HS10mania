@@ -20,6 +20,8 @@ fn_create_monthly_price <- function(df_data, vct_top_country) {
     # this function needs replacing..its unreadable!!
     mutate(tot_price = remove_outliers(tot_price, low_lim = 0.05, up_lim = 0.95))
   
+  # glob.env$filter_country <- df_detail
+  
   # 2. create average monthly prices for all countries.
   df_total <- df_data %>% group_by(date) %>%
     summarise(country = "Total",

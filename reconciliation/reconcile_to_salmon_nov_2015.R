@@ -12,19 +12,27 @@ library(data.table)
 library(lubridate)
 library(dplyr)
 
+
+
+
 # for local use
-# setwd("/Volumes/SILVER_FAT/export_intelligence/reconciliation")
-
-
-
+#setwd("/Volumes/SILVER_FAT/export_intelligence/reconciliation")
 
 #========= Step 1======== LOAD in Data =========
-# this loads in "Exports_By_Country"
-load("P:/OTSP/export_intelligence/inputs/Exports_By_Country_20151130.rda")
 
+
+# LOAD FROM USB DRIVE - COMMENT OUT
+# load("/Volumes/SILVER_FAT/export_intelligence/reconciliation/input_data/Exports_By_Country_20151130.rda")
+# df_codes <- read.csv("/Volumes/SILVER_FAT/export_intelligence/inputs/concordances/product_codes.csv",  colClasses = c("character", "character"))
+
+# LOAD FROM NETWORK
+# this loads in "Exports_By_Country"
+ load("P:/OTSP/export_intelligence/inputs/Exports_By_Country_20151130.rda")
 # load in product codes
-df_codes <- read.csv("P:/OTSP/export_intelligence/inputs/concordances/product_codes.csv", 
-                 colClasses = c("character", "character"))
+ df_codes <- read.csv("P:/OTSP/export_intelligence/inputs/concordances/product_codes.csv", colClasses = c("character", "character"))
+
+
+
 
 
 vct_cols_to_drop <- c("Exports_NZD_fob", "Exports_Qty", "Re_exports_NZD_fob", "Re_exports_Qty")

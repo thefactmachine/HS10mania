@@ -24,7 +24,7 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
             legend.position = "right") +
       theme(legend.position = "none") + 
       scale_y_continuous(label = comma) +
-      scale_fill_manual(values = mbie.cols(1:3)) +
+      scale_fill_manual(values = mbie.cols(c(1, 2, 4))) +
       labs(x = "Year") +
       labs(y = "") +
       ggtitle(str_title)
