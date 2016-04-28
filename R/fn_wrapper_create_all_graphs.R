@@ -53,7 +53,7 @@ fn_wrapper_create_all_graphs <- function(a_df_data, a_vct_HS10, a_vct_top_n_coun
   # graph 3 - smoothed_price
   fn_create_graph_smoothed_price(df_top_country_price, "outputs/graphs/smoothed_price", 
                                  a_lst_args$product_name, a_lst_args$str_title_year_end, 
-                                 a_lst_args$str_vol_units)
+                                 a_lst_args$str_vol_units, a_vct_top_n_country)
 
   # graph 4 - monthly_number_of_countries
   fn_create_graph_monthly(df_monthly_vvn, "outputs/graphs", 

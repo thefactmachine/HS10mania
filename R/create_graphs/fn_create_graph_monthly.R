@@ -24,6 +24,8 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
   # extract the optional str_units argument -- it is only used in the volume graph
   if (missing(...)) str_units <- "ERROR UNDEFINED"  else str_units <- list(...)[[1]]
 
+  # this colour is for the stats_smooth standard error background
+  str_light_grey = "#D4D4D4"
   
   # We change various items depending on the graph type
   switch(str_graph_type,
@@ -75,8 +77,9 @@ fn_create_graph_monthly <- function(df_data, str_dir_pfx, str_product,
       scale_colour_manual("Domain", values = mbie.cols(1:7)) + 
       scale_y_continuous(str_y_axis, label = comma) +
       theme(legend.text = element_text(lineheight = 1), legend.key.height = grid::unit(1, "cm")) +
-      stat_smooth(method = "loess", colour = str_sm_line_col) +
+      stat_smooth(method = "loess", colour = str_sm_line_col, fill = str_light_grey) +
       theme(axis.title.x = element_blank()) +
+      theme(panel.grid.minor.y = element_blank()) +
       theme(legend.key = element_blank()) +
       ggtitle(str_title)
   )

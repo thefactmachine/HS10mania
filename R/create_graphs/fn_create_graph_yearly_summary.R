@@ -23,6 +23,8 @@ fn_create_graph_yearly_summary <- function(df_data, str_dir, str_product, a_int_
       theme(legend.text = element_text(lineheight = 0.6), legend.key.height = grid::unit(0.8, "cm"), 
             legend.position = "right") +
       theme(legend.position = "none") + 
+      theme(panel.grid.minor.y = element_blank()) +
+      theme(panel.grid.minor.x = element_blank()) +
       scale_y_continuous(label = comma) +
       scale_fill_manual(values = mbie.cols(c(1, 2, 4))) +
       labs(x = "Year") +

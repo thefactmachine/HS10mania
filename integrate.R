@@ -120,6 +120,7 @@ df_unit_lookup <- fn_read_unit_lookup()
 c_num_previous_years = 3
 c_top_n_countries = 6
 
+
 # define some dates which are used for all reports
 # get the most recent month
 dte_end_date <- max(df_me_exports$Date)                             
@@ -136,9 +137,8 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
 # lst_prod_codes <- lst_prod_codes[c("salmon", "honey")]
 # lst_prod_codes <- lst_prod_codes[c("peas")]
 # lst_prod_codes <- lst_prod_codes[c("salmon")]
-
-lst_prod_codes <- lst_prod_codes[5]
-
+# lst_prod_codes <- lst_prod_codes[5]
+# lst_prod_codes <- lst_prod_codes[1]
 
  
 # before we start producing reports, delete all previous files (output/*)
