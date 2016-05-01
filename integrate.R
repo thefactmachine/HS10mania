@@ -28,6 +28,10 @@
 #                 limits the set of products to just Salmon and Honey.  The user can uncomment this line to run the program for
 #                 all products.
 
+# How to publish 
+#                 Fill in this form:   http://thelink/teamsites/cs/web/Lists/Issues/NewForm.aspx
+#                 How to fill in the form above:   http://thelink/how/Pages/complete-web-request.aspx
+
 # Peer review: Ilkka Havukkala 26 April: ok
 
 # NB  CRASHES RTudio if you try to use 32bit R in RStudio. Make sure you are
@@ -55,6 +59,7 @@ library(mbie)
 library(tidyr)
 library(tools)
 library(dplyr)
+library(stringr)
 
 # get rid of previous warning messages
 assign("last.warning", NULL, envir = baseenv())
@@ -143,6 +148,7 @@ int_report_year <- ifelse(month(dte_end_date) == 12,
  
 # before we start producing reports, delete all previous files (output/*)
 fn_remove_files_from_output_dir()
+
 
 # create vector with global scope to store PDF file names
 glob.env <- new.env() 

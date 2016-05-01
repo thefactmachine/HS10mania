@@ -15,8 +15,8 @@ fn_create_git_ignores <- function() {
   git_path <- file.path(PROJHOME, "outputs", "compile_tex", str_git_file_name)
   writeLines(str_git_ig, git_path)
   
-  git_path <- file.path(PROJHOME, "outputs", "consolidated_pdf", str_git_file_name)
-  writeLines(str_git_ig, git_path)
+#  git_path <- file.path(PROJHOME, "outputs", "consolidated_pdf", str_git_file_name)
+#  writeLines(str_git_ig, git_path)
   
   git_path <- file.path(PROJHOME, "outputs", "cover_page", str_git_file_name)
   writeLines(str_git_ig, git_path)

@@ -17,7 +17,7 @@ fn_read_data_and_convert_units <- function() {
     
     # ======================================================
     # load in merchandise exports and call it "df_exports"  (3630442)
-    load("inputs/Exports_By_Country_20151130.rda")
+    load("inputs/Exports_By_Country_20151231.rda")
     df_exports <- Exports_By_Country; rm(Exports_By_Country)
     
     # get rid of some variables
